@@ -222,54 +222,6 @@ src/OpDetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s
 .PHONY : src/OpDetectorConstruction.cc.s
 
-src/OpGlobal.o: src/OpGlobal.cc.o
-.PHONY : src/OpGlobal.o
-
-# target to build an object file
-src/OpGlobal.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpGlobal.cc.o
-.PHONY : src/OpGlobal.cc.o
-
-src/OpGlobal.i: src/OpGlobal.cc.i
-.PHONY : src/OpGlobal.i
-
-# target to preprocess a source file
-src/OpGlobal.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpGlobal.cc.i
-.PHONY : src/OpGlobal.cc.i
-
-src/OpGlobal.s: src/OpGlobal.cc.s
-.PHONY : src/OpGlobal.s
-
-# target to generate assembly for a file
-src/OpGlobal.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpGlobal.cc.s
-.PHONY : src/OpGlobal.cc.s
-
-src/OpParameterContainer.o: src/OpParameterContainer.cc.o
-.PHONY : src/OpParameterContainer.o
-
-# target to build an object file
-src/OpParameterContainer.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpParameterContainer.cc.o
-.PHONY : src/OpParameterContainer.cc.o
-
-src/OpParameterContainer.i: src/OpParameterContainer.cc.i
-.PHONY : src/OpParameterContainer.i
-
-# target to preprocess a source file
-src/OpParameterContainer.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpParameterContainer.cc.i
-.PHONY : src/OpParameterContainer.cc.i
-
-src/OpParameterContainer.s: src/OpParameterContainer.cc.s
-.PHONY : src/OpParameterContainer.s
-
-# target to generate assembly for a file
-src/OpParameterContainer.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpParameterContainer.cc.s
-.PHONY : src/OpParameterContainer.cc.s
-
 src/OpPrimaryGeneratorAction.o: src/OpPrimaryGeneratorAction.cc.o
 .PHONY : src/OpPrimaryGeneratorAction.o
 
@@ -313,12 +265,6 @@ help:
 	@echo "... src/OpDetectorConstruction.o"
 	@echo "... src/OpDetectorConstruction.i"
 	@echo "... src/OpDetectorConstruction.s"
-	@echo "... src/OpGlobal.o"
-	@echo "... src/OpGlobal.i"
-	@echo "... src/OpGlobal.s"
-	@echo "... src/OpParameterContainer.o"
-	@echo "... src/OpParameterContainer.i"
-	@echo "... src/OpParameterContainer.s"
 	@echo "... src/OpPrimaryGeneratorAction.o"
 	@echo "... src/OpPrimaryGeneratorAction.i"
 	@echo "... src/OpPrimaryGeneratorAction.s"

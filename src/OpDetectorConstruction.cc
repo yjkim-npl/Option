@@ -1,5 +1,4 @@
 #include "OpDetectorConstruction.hh"
-#include "OpParameterContainer.hh"
 
 #include "G4RunManager.hh"
 #include "G4NistManager.hh"

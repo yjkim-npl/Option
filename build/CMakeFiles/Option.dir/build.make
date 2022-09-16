@@ -97,38 +97,10 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpDetectorConstruction.cc -o CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s
 
-CMakeFiles/Option.dir/src/OpGlobal.cc.o: CMakeFiles/Option.dir/flags.make
-CMakeFiles/Option.dir/src/OpGlobal.cc.o: ../src/OpGlobal.cc
-CMakeFiles/Option.dir/src/OpGlobal.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Option.dir/src/OpGlobal.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpGlobal.cc.o -MF CMakeFiles/Option.dir/src/OpGlobal.cc.o.d -o CMakeFiles/Option.dir/src/OpGlobal.cc.o -c /Users/yjkim/workspace/git/Option/src/OpGlobal.cc
-
-CMakeFiles/Option.dir/src/OpGlobal.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpGlobal.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpGlobal.cc > CMakeFiles/Option.dir/src/OpGlobal.cc.i
-
-CMakeFiles/Option.dir/src/OpGlobal.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpGlobal.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpGlobal.cc -o CMakeFiles/Option.dir/src/OpGlobal.cc.s
-
-CMakeFiles/Option.dir/src/OpParameterContainer.cc.o: CMakeFiles/Option.dir/flags.make
-CMakeFiles/Option.dir/src/OpParameterContainer.cc.o: ../src/OpParameterContainer.cc
-CMakeFiles/Option.dir/src/OpParameterContainer.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Option.dir/src/OpParameterContainer.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpParameterContainer.cc.o -MF CMakeFiles/Option.dir/src/OpParameterContainer.cc.o.d -o CMakeFiles/Option.dir/src/OpParameterContainer.cc.o -c /Users/yjkim/workspace/git/Option/src/OpParameterContainer.cc
-
-CMakeFiles/Option.dir/src/OpParameterContainer.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpParameterContainer.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpParameterContainer.cc > CMakeFiles/Option.dir/src/OpParameterContainer.cc.i
-
-CMakeFiles/Option.dir/src/OpParameterContainer.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpParameterContainer.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpParameterContainer.cc -o CMakeFiles/Option.dir/src/OpParameterContainer.cc.s
-
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: CMakeFiles/Option.dir/flags.make
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: ../src/OpPrimaryGeneratorAction.cc
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o -MF CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o.d -o CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpPrimaryGeneratorAction.cc
 
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.i: cmake_force
@@ -143,8 +115,6 @@ CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s: cmake_force
 Option_OBJECTS = \
 "CMakeFiles/Option.dir/Option.cc.o" \
 "CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o" \
-"CMakeFiles/Option.dir/src/OpGlobal.cc.o" \
-"CMakeFiles/Option.dir/src/OpParameterContainer.cc.o" \
 "CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
 
 # External object files for target Option
@@ -152,8 +122,6 @@ Option_EXTERNAL_OBJECTS =
 
 Option: CMakeFiles/Option.dir/Option.cc.o
 Option: CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o
-Option: CMakeFiles/Option.dir/src/OpGlobal.cc.o
-Option: CMakeFiles/Option.dir/src/OpParameterContainer.cc.o
 Option: CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o
 Option: CMakeFiles/Option.dir/build.make
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4Tree.dylib
@@ -206,7 +174,7 @@ Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4gl
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4ptl.0.0.2.dylib
 Option: /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/libCLHEP-2.4.4.0.dylib
 Option: CMakeFiles/Option.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Option"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Option"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Option.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

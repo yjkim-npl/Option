@@ -42,9 +42,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Option" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Option")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/yjkim/workspace/git/root/root-v6-24.00/install/lib"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Option")
-    execute_process(COMMAND /usr/bin/install_name_tool
       -delete_rpath "/Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Option")
     execute_process(COMMAND /usr/bin/install_name_tool
