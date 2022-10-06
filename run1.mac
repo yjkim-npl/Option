@@ -1,0 +1,12 @@
+/run/initialize
+#
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 1
+
+/gun/particle mu-
+/gun/energy 100 MeV
+/tracking/verbose 2
+#
+/run/beamOn 1

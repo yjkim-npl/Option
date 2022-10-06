@@ -256,6 +256,49 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__split_buffer \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Material.hh \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/PhysicalConstants.h \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/defs.h \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/SystemOfUnits.h \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Element.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Isotope.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IonisParamElm.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IsotopeVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ElementTable.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesTable.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesIndex.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertyVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVector.hh \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stack \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/deque \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Log.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVectorType.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVector.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesTable.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IonisParamMat.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Exp.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Threading.hh \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/condition_variable \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/future \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/thread \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4SandiaTable.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4OrderedTable.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4DataVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4DataVector.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ElementVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialTable.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4OpticalSurface.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Physics2DVector.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Physics2DVector.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4SurfaceProperty.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Colour.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ThreeVector.hh \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/ThreeVector.h \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/defs.h \
+  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/ThreeVector.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4RunManager.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/rundefs.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Event.hh \
@@ -264,10 +307,6 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4AllocatorPool.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PrimaryVertex.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/pwdefs.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ThreeVector.hh \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/ThreeVector.h \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/defs.h \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Vector/ThreeVector.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PrimaryParticle.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4HCofThisEvent.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4VHitsCollection.hh \
@@ -291,19 +330,12 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4TrackStack.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4SmartTrackStack.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Track.hh \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/PhysicalConstants.h \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/defs.h \
-  /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/CLHEP-2.4.4.0/../../include/CLHEP/Units/SystemOfUnits.h \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/trkdefs.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4LogicalVolume.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Region.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4GeomSplitter.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/geomwdefs.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4AutoLock.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Threading.hh \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/condition_variable \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/future \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/thread \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Region.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4VPhysicalVolume.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/geomdefs.hh \
@@ -330,7 +362,6 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PDefManager.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ParticleDefinition.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4LorentzVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Log.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ParticleMomentum.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ElectronOccupancy.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4DynamicParticle.icc \
@@ -341,32 +372,6 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ReferenceCountedHandle.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4VUserTrackInformation.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsModelCatalog.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Material.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Element.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Isotope.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IonisParamElm.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IsotopeVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ElementTable.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesTable.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesIndex.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertyVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVector.hh \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/fstream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/filesystem \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stack \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/deque \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVectorType.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PhysicsVector.icc \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialPropertiesTable.icc \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4IonisParamMat.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Exp.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4SandiaTable.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4OrderedTable.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4DataVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4DataVector.icc \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4ElementVector.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4MaterialTable.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Track.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Step.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4StepPoint.hh \
@@ -539,10 +544,17 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Visible.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Visible.icc \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Box.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Cons.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Cons.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Orb.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Orb.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Sphere.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Sphere.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Trd.hh \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Trd.icc \
+  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PVPlacement.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4VisAttributes.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/graphics_reps_defs.hh \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Colour.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4Color.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4VisAttributes.icc \
-  /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4PVPlacement.hh \
   /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/include/Geant4/G4SystemOfUnits.hh

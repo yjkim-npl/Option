@@ -1,62 +1,72 @@
-#-------------------------------------------------------
+#----------------------------------------------------------------------------
 # Setup the project
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.8...3.18)
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+  cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+endif()
 project(Option)
 
-#-------------------------------------------------------
-#set(ACTIVATE_EVE OFF CACHE INTERNAL "")
-#if(ACTIVATE_EVE)
-#	add_definition(-DACTIVATE_EVE)
-#endif(ACTIVATE_EVE)
-#if(ACTIVATE_EVE)
-#  find_package(ROOT REQUIRED COMPONENTS RIO Net Eve EG RGL Geom Gui Graf Graf3d Ged Matrix MathCore)
-#else(ACTIVATE_EVE)
-#  find_package(ROOT REQUIRED COMPONENTS RIO Net Geom Gui Graf Graf3d Ged Matrix MathCore)
-#endif(ACTIVATE_EVE)
+#----------------------------------------------------------------------------
+# Find Geant4 package, activating all available UI and Vis drivers by default
+# You can set WITH_GEANT4_UIVIS to OFF via the command line or ccmake/cmake-gui
+# to build a batch mode only executable
 #
-#list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
-#set(useROOT true)
-#if(useROOT)
-#	list(APPEND ${PROJECT_SOURCE_DIR}/src)
-#	list(APPEND ${PROJECT_SOURCE_DIR}/include)
-#	list(APPEND ${PROJECT_SOURCE_DIR}/Option.cc)
-##	EXECUTE_PROCESS()
-#endif(useROOT)
-#include(${ROOT_USE_FILE})
-##set(TOOLS_LIBRARIES_LIST ${ROOT_LIBRARIES} CACHE INTERNAL "")
-#link_directories(${ROOT_LIBRARIES_DIR})
-#-------------------------------------------------------
-option(WITH_GEANT4_UIVIS "Build the Geant4 UI and Vis drivers" ON)
+option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
-	find_package(Geant4 REQUIRED ui_all vis_all)
+  find_package(Geant4 REQUIRED ui_all vis_all)
 else()
-	find_package(Geant4 REQUIRED)
+  find_package(Geant4 REQUIRED)
 endif()
 
-#-------------------------------------------------------
+#----------------------------------------------------------------------------
+# Setup Geant4 include directories and compile definitions
+# Setup include directory for this project
+#
 include(${Geant4_USE_FILE})
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-#-------------------------------------------------------
-include_directories(${PROJECT_SOURCE_DIR}/include ${Geant4_INCLUDE_DIR})
+#----------------------------------------------------------------------------
+# Locate sources and headers for this project
+# NB: headers are included so they will show up in IDEs
+#
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
-#-------------------------------------------------------
+#----------------------------------------------------------------------------
+# Add the executable, and link it to the Geant4 libraries
+#
 add_executable(Option Option.cc ${sources} ${headers})
-target_link_libraries(Option ${Geant4_LIBRARIES})# ${TOOLS_LIBRARIES_LIST})
+target_link_libraries(Option ${Geant4_LIBRARIES})
 
-#-------------------------------------------------------
-set(Option_lists
-	vis.mac
-	#...
-	)
+#----------------------------------------------------------------------------
+# Copy all scripts to the build directory, i.e. the directory in which we
+# build B1. This is so that we can run the executable directly because it
+# relies on these scripts being in the current working directory.
+#
+set(OPTION_SCRIPTS
+#  Option.in
+#  Option.out
+  init_vis.mac
+  run1.mac
+  run2.mac
+  vis.mac
+  )
 
-foreach(_file ${Option_lists})
-	configure_file(
-	${PROJECT_SOURCE_DIR}/${_file}
-	${PROJECT_BINARY_DIR}/${_file}
-	COPYONLY
-	)
+foreach(_script ${OPTION_SCRIPTS})
+  configure_file(
+    ${PROJECT_SOURCE_DIR}/${_script}
+    ${PROJECT_BINARY_DIR}/${_script}
+    COPYONLY
+    )
 endforeach()
-#-------------------------------------------------------
-install(TARGETS Option DESTINATION bin)
+
+##----------------------------------------------------------------------------
+## For internal Geant4 use - but has no effect if you build this
+## example standalone
+##
+#add_custom_target(Option DEPENDS Option)
+#
+##----------------------------------------------------------------------------
+## Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
+##
+#install(TARGETS Option DESTINATION bin)

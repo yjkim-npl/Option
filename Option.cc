@@ -1,69 +1,75 @@
 #include "OpDetectorConstruction.hh"
-#include "OpPrimaryGeneratorAction.hh"
+#include "OpActionInitialization.hh"
 
-#include "G4EmStandardPhysics_option4.hh"
-#include "FTFP_BERT.hh"
-#include "G4OpticalPhysics.hh"
 #include "G4RunManagerFactory.hh"
-#include "G4RunManager.hh"
 
-#include "G4UIExecutive.hh"
 #include "G4UImanager.hh"
+#include "G4OpticalPhysics.hh"
+#include "FTFP_BERT.hh"
+
 #include "G4VisExecutive.hh"
+#include "G4UIExecutive.hh"
 
-int main(int argc, char** argv)
+#include "Randomize.hh"
+
+
+int main(int argc,char** argv)
 {
-	G4UIExecutive* ui = nullptr;
-	if(argc == 1)	// the case of command './Option'
-	{
-		ui = new G4UIExecutive(argc,argv);
-	}
-	auto runManager = G4RunManagerFactory::CreateRunManager();
+  G4UIExecutive* ui = 0;
+  if ( argc == 1 ) {
+    ui = new G4UIExecutive(argc, argv);
+  }
+  auto* runManager =
+    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
 
-	G4int seed = 123;	
-	if(argc > 2)	// the case of command './Option <arguments>'
-	{
-		seed = atoi(argv[argc-1]);	// the last arguments is considered as seed
-	}
+  runManager->SetUserInitialization(new OpDetectorConstruction());
 
-	//Set random seed
-	G4Random::setTheSeed(seed);
+  // Physics list
+  G4VModularPhysicsList* physicsList = new FTFP_BERT;
+  G4OpticalPhysics* opticalPhysics = new G4OpticalPhysics();
+  physicsList -> RegisterPhysics(opticalPhysics);
+  opticalPhysics -> Configure(kCerenkov, true);
+  opticalPhysics -> Configure(kScintillation, true);
+  opticalPhysics -> SetTrackSecondariesFirst(kCerenkov, true);
+  opticalPhysics -> SetTrackSecondariesFirst(kScintillation,true);
+  physicsList->SetVerboseLevel(1);
+  runManager->SetUserInitialization(physicsList);
+    
+  // User action initialization
+  runManager->SetUserInitialization(new OpActionInitialization());
+  
+  // Initialize visualization
+  //
+  G4VisManager* visManager = new G4VisExecutive;
+  // G4VisExecutive can take a verbosity argument - see /vis/verbose guidance.
+  // G4VisManager* visManager = new G4VisExecutive("Quiet");
+  visManager->Initialize();
 
-	//Detector construction
-	OpDetectorConstruction* detector = new OpDetectorConstruction();
-	runManager -> SetUserInitialization(detector);
+  // Get the pointer to the User Interface manager
+  G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
-	//Physics list
-	G4VModularPhysicsList* physicsList = new FTFP_BERT;
-	physicsList -> ReplacePhysics(new G4EmStandardPhysics_option4());
-	G4OpticalPhysics* opticalPhysics = new G4OpticalPhysics();
-	physicsList -> RegisterPhysics(opticalPhysics);
-	runManager -> SetUserInitialization(physicsList);
+  // Process macro or start UI session
+  //
+  if ( ! ui ) { 
+    // batch mode
+    G4String command = "/control/execute ";
+    G4String fileName = argv[1];
+    UImanager->ApplyCommand(command+fileName);
+  }
+  else { 
+    // interactive mode
+    UImanager->ApplyCommand("/control/execute init_vis.mac");
+    ui->SessionStart();
+    delete ui;
+  }
 
-	//User action initialization
-//	runManager -> SetUserInitialization(new OpActionInitialization(detector));
-	runManager -> SetUserAction(new OpPrimaryGeneratorAction());
-
-	//Initialize visualization
-	G4VisManager* visManager = new G4VisExecutive;
-	visManager -> Initialize();
-
-	//Get the pointer to the User Interface
-	G4UImanager* UImanager = G4UImanager::GetUIpointer();
-
-	if(ui)
-	{
-		if(ui->IsGUI())
-			UImanager->ApplyCommand("/control/execute vis.mac");
-		ui->SessionStart();
-		delete ui;
-	}else{
-		G4String command = "/control/execute ";
-		G4String fileName = argv[1];	// the first argument is considered as macro
-		UImanager -> ApplyCommand(command + fileName);
-	}
-
-	delete visManager;
-	delete runManager;
-	return 0;
+  // Job termination
+  // Free the store: user actions, physics_list and detector_description are
+  // owned and deleted by the run manager, so they should not be deleted 
+  // in the main() program !
+  
+  delete visManager;
+  delete runManager;
 }
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....

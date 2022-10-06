@@ -65,39 +65,6 @@ CMAKE_BINARY_DIR = /Users/yjkim/workspace/git/Option/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -117,18 +84,6 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -198,6 +153,30 @@ Option.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/Option.cc.s
 .PHONY : Option.cc.s
 
+src/OpActionInitialization.o: src/OpActionInitialization.cc.o
+.PHONY : src/OpActionInitialization.o
+
+# target to build an object file
+src/OpActionInitialization.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.o
+.PHONY : src/OpActionInitialization.cc.o
+
+src/OpActionInitialization.i: src/OpActionInitialization.cc.i
+.PHONY : src/OpActionInitialization.i
+
+# target to preprocess a source file
+src/OpActionInitialization.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.i
+.PHONY : src/OpActionInitialization.cc.i
+
+src/OpActionInitialization.s: src/OpActionInitialization.cc.s
+.PHONY : src/OpActionInitialization.s
+
+# target to generate assembly for a file
+src/OpActionInitialization.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.s
+.PHONY : src/OpActionInitialization.cc.s
+
 src/OpDetectorConstruction.o: src/OpDetectorConstruction.cc.o
 .PHONY : src/OpDetectorConstruction.o
 
@@ -221,6 +200,30 @@ src/OpDetectorConstruction.s: src/OpDetectorConstruction.cc.s
 src/OpDetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s
 .PHONY : src/OpDetectorConstruction.cc.s
+
+src/OpEventAction.o: src/OpEventAction.cc.o
+.PHONY : src/OpEventAction.o
+
+# target to build an object file
+src/OpEventAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.o
+.PHONY : src/OpEventAction.cc.o
+
+src/OpEventAction.i: src/OpEventAction.cc.i
+.PHONY : src/OpEventAction.i
+
+# target to preprocess a source file
+src/OpEventAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.i
+.PHONY : src/OpEventAction.cc.i
+
+src/OpEventAction.s: src/OpEventAction.cc.s
+.PHONY : src/OpEventAction.s
+
+# target to generate assembly for a file
+src/OpEventAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.s
+.PHONY : src/OpEventAction.cc.s
 
 src/OpPrimaryGeneratorAction.o: src/OpPrimaryGeneratorAction.cc.o
 .PHONY : src/OpPrimaryGeneratorAction.o
@@ -246,6 +249,54 @@ src/OpPrimaryGeneratorAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s
 .PHONY : src/OpPrimaryGeneratorAction.cc.s
 
+src/OpRunAction.o: src/OpRunAction.cc.o
+.PHONY : src/OpRunAction.o
+
+# target to build an object file
+src/OpRunAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.o
+.PHONY : src/OpRunAction.cc.o
+
+src/OpRunAction.i: src/OpRunAction.cc.i
+.PHONY : src/OpRunAction.i
+
+# target to preprocess a source file
+src/OpRunAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.i
+.PHONY : src/OpRunAction.cc.i
+
+src/OpRunAction.s: src/OpRunAction.cc.s
+.PHONY : src/OpRunAction.s
+
+# target to generate assembly for a file
+src/OpRunAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.s
+.PHONY : src/OpRunAction.cc.s
+
+src/OpSteppingAction.o: src/OpSteppingAction.cc.o
+.PHONY : src/OpSteppingAction.o
+
+# target to build an object file
+src/OpSteppingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.o
+.PHONY : src/OpSteppingAction.cc.o
+
+src/OpSteppingAction.i: src/OpSteppingAction.cc.i
+.PHONY : src/OpSteppingAction.i
+
+# target to preprocess a source file
+src/OpSteppingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.i
+.PHONY : src/OpSteppingAction.cc.i
+
+src/OpSteppingAction.s: src/OpSteppingAction.cc.s
+.PHONY : src/OpSteppingAction.s
+
+# target to generate assembly for a file
+src/OpSteppingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.s
+.PHONY : src/OpSteppingAction.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -253,21 +304,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Option"
 	@echo "... Option.o"
 	@echo "... Option.i"
 	@echo "... Option.s"
+	@echo "... src/OpActionInitialization.o"
+	@echo "... src/OpActionInitialization.i"
+	@echo "... src/OpActionInitialization.s"
 	@echo "... src/OpDetectorConstruction.o"
 	@echo "... src/OpDetectorConstruction.i"
 	@echo "... src/OpDetectorConstruction.s"
+	@echo "... src/OpEventAction.o"
+	@echo "... src/OpEventAction.i"
+	@echo "... src/OpEventAction.s"
 	@echo "... src/OpPrimaryGeneratorAction.o"
 	@echo "... src/OpPrimaryGeneratorAction.i"
 	@echo "... src/OpPrimaryGeneratorAction.s"
+	@echo "... src/OpRunAction.o"
+	@echo "... src/OpRunAction.i"
+	@echo "... src/OpRunAction.s"
+	@echo "... src/OpSteppingAction.o"
+	@echo "... src/OpSteppingAction.i"
+	@echo "... src/OpSteppingAction.s"
 .PHONY : help
 
 
