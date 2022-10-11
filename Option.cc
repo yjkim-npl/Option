@@ -27,11 +27,11 @@ int main(int argc,char** argv)
   // Physics list
   G4VModularPhysicsList* physicsList = new FTFP_BERT;
   G4OpticalPhysics* opticalPhysics = new G4OpticalPhysics();
-  physicsList -> RegisterPhysics(opticalPhysics);
   opticalPhysics -> Configure(kCerenkov, true);
   opticalPhysics -> Configure(kScintillation, true);
   opticalPhysics -> SetTrackSecondariesFirst(kCerenkov, true);
   opticalPhysics -> SetTrackSecondariesFirst(kScintillation,true);
+  physicsList -> RegisterPhysics(opticalPhysics);
   physicsList->SetVerboseLevel(1);
   runManager->SetUserInitialization(physicsList);
     

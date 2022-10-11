@@ -1,11 +1,11 @@
 /vis/open OGL 600x600-0+0
-/vis/ogl/set/displayListLimit 500000
 
 /vis/viewer/set/autoRefresh false
 /vis/verbose errors
 /vis/drawVolume
 
 #/vis/viewer/set/lightsVector -1 0 0
+/vis/scene/add/hits
 /vis/scene/add/frame
 
 /vis/geometry/set/visibility World 0 false
@@ -20,7 +20,6 @@
 /vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
 /vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
 
-/vis/scene/add/hits
 /vis/modeling/trajectories/create/drawByParticleID
 /vis/modeling/trajectories/drawByParticleID-0/set opticalphoton cyan
 
