@@ -83,10 +83,24 @@ CMakeFiles/Option.dir/Option.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/Option.cc.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/Option.cc -o CMakeFiles/Option.dir/Option.cc.s
 
+CMakeFiles/Option.dir/src/OpActionInitialization.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpActionInitialization.cc.o: ../src/OpActionInitialization.cc
+CMakeFiles/Option.dir/src/OpActionInitialization.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Option.dir/src/OpActionInitialization.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpActionInitialization.cc.o -MF CMakeFiles/Option.dir/src/OpActionInitialization.cc.o.d -o CMakeFiles/Option.dir/src/OpActionInitialization.cc.o -c /Users/yjkim/workspace/git/Option/src/OpActionInitialization.cc
+
+CMakeFiles/Option.dir/src/OpActionInitialization.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpActionInitialization.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpActionInitialization.cc > CMakeFiles/Option.dir/src/OpActionInitialization.cc.i
+
+CMakeFiles/Option.dir/src/OpActionInitialization.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpActionInitialization.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpActionInitialization.cc -o CMakeFiles/Option.dir/src/OpActionInitialization.cc.s
+
 CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: CMakeFiles/Option.dir/flags.make
 CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: ../src/OpDetectorConstruction.cc
 CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o -MF CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o.d -o CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpDetectorConstruction.cc
 
 CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.i: cmake_force
@@ -97,10 +111,66 @@ CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpDetectorConstruction.cc -o CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s
 
+CMakeFiles/Option.dir/src/OpEventAction.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpEventAction.cc.o: ../src/OpEventAction.cc
+CMakeFiles/Option.dir/src/OpEventAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Option.dir/src/OpEventAction.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpEventAction.cc.o -MF CMakeFiles/Option.dir/src/OpEventAction.cc.o.d -o CMakeFiles/Option.dir/src/OpEventAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpEventAction.cc
+
+CMakeFiles/Option.dir/src/OpEventAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpEventAction.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpEventAction.cc > CMakeFiles/Option.dir/src/OpEventAction.cc.i
+
+CMakeFiles/Option.dir/src/OpEventAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpEventAction.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpEventAction.cc -o CMakeFiles/Option.dir/src/OpEventAction.cc.s
+
+CMakeFiles/Option.dir/src/OpMaterials.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpMaterials.cc.o: ../src/OpMaterials.cc
+CMakeFiles/Option.dir/src/OpMaterials.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Option.dir/src/OpMaterials.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpMaterials.cc.o -MF CMakeFiles/Option.dir/src/OpMaterials.cc.o.d -o CMakeFiles/Option.dir/src/OpMaterials.cc.o -c /Users/yjkim/workspace/git/Option/src/OpMaterials.cc
+
+CMakeFiles/Option.dir/src/OpMaterials.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpMaterials.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpMaterials.cc > CMakeFiles/Option.dir/src/OpMaterials.cc.i
+
+CMakeFiles/Option.dir/src/OpMaterials.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpMaterials.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpMaterials.cc -o CMakeFiles/Option.dir/src/OpMaterials.cc.s
+
+CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o: ../src/OpPhotonDetHit.cc
+CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o -MF CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o.d -o CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o -c /Users/yjkim/workspace/git/Option/src/OpPhotonDetHit.cc
+
+CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpPhotonDetHit.cc > CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.i
+
+CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpPhotonDetHit.cc -o CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.s
+
+CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o: ../src/OpPhotonDetSD.cc
+CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o -MF CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o.d -o CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o -c /Users/yjkim/workspace/git/Option/src/OpPhotonDetSD.cc
+
+CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpPhotonDetSD.cc > CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.i
+
+CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpPhotonDetSD.cc -o CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.s
+
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: CMakeFiles/Option.dir/flags.make
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: ../src/OpPrimaryGeneratorAction.cc
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o -MF CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o.d -o CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpPrimaryGeneratorAction.cc
 
 CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.i: cmake_force
@@ -111,18 +181,156 @@ CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpPrimaryGeneratorAction.cc -o CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s
 
+CMakeFiles/Option.dir/src/OpRun.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpRun.cc.o: ../src/OpRun.cc
+CMakeFiles/Option.dir/src/OpRun.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Option.dir/src/OpRun.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpRun.cc.o -MF CMakeFiles/Option.dir/src/OpRun.cc.o.d -o CMakeFiles/Option.dir/src/OpRun.cc.o -c /Users/yjkim/workspace/git/Option/src/OpRun.cc
+
+CMakeFiles/Option.dir/src/OpRun.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpRun.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpRun.cc > CMakeFiles/Option.dir/src/OpRun.cc.i
+
+CMakeFiles/Option.dir/src/OpRun.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpRun.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpRun.cc -o CMakeFiles/Option.dir/src/OpRun.cc.s
+
+CMakeFiles/Option.dir/src/OpRunAction.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpRunAction.cc.o: ../src/OpRunAction.cc
+CMakeFiles/Option.dir/src/OpRunAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Option.dir/src/OpRunAction.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpRunAction.cc.o -MF CMakeFiles/Option.dir/src/OpRunAction.cc.o.d -o CMakeFiles/Option.dir/src/OpRunAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpRunAction.cc
+
+CMakeFiles/Option.dir/src/OpRunAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpRunAction.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpRunAction.cc > CMakeFiles/Option.dir/src/OpRunAction.cc.i
+
+CMakeFiles/Option.dir/src/OpRunAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpRunAction.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpRunAction.cc -o CMakeFiles/Option.dir/src/OpRunAction.cc.s
+
+CMakeFiles/Option.dir/src/OpStackingAction.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpStackingAction.cc.o: ../src/OpStackingAction.cc
+CMakeFiles/Option.dir/src/OpStackingAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Option.dir/src/OpStackingAction.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpStackingAction.cc.o -MF CMakeFiles/Option.dir/src/OpStackingAction.cc.o.d -o CMakeFiles/Option.dir/src/OpStackingAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpStackingAction.cc
+
+CMakeFiles/Option.dir/src/OpStackingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpStackingAction.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpStackingAction.cc > CMakeFiles/Option.dir/src/OpStackingAction.cc.i
+
+CMakeFiles/Option.dir/src/OpStackingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpStackingAction.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpStackingAction.cc -o CMakeFiles/Option.dir/src/OpStackingAction.cc.s
+
+CMakeFiles/Option.dir/src/OpSteppingAction.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpSteppingAction.cc.o: ../src/OpSteppingAction.cc
+CMakeFiles/Option.dir/src/OpSteppingAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Option.dir/src/OpSteppingAction.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpSteppingAction.cc.o -MF CMakeFiles/Option.dir/src/OpSteppingAction.cc.o.d -o CMakeFiles/Option.dir/src/OpSteppingAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpSteppingAction.cc
+
+CMakeFiles/Option.dir/src/OpSteppingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpSteppingAction.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpSteppingAction.cc > CMakeFiles/Option.dir/src/OpSteppingAction.cc.i
+
+CMakeFiles/Option.dir/src/OpSteppingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpSteppingAction.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpSteppingAction.cc -o CMakeFiles/Option.dir/src/OpSteppingAction.cc.s
+
+CMakeFiles/Option.dir/src/OpTrackingAction.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpTrackingAction.cc.o: ../src/OpTrackingAction.cc
+CMakeFiles/Option.dir/src/OpTrackingAction.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Option.dir/src/OpTrackingAction.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpTrackingAction.cc.o -MF CMakeFiles/Option.dir/src/OpTrackingAction.cc.o.d -o CMakeFiles/Option.dir/src/OpTrackingAction.cc.o -c /Users/yjkim/workspace/git/Option/src/OpTrackingAction.cc
+
+CMakeFiles/Option.dir/src/OpTrackingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpTrackingAction.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpTrackingAction.cc > CMakeFiles/Option.dir/src/OpTrackingAction.cc.i
+
+CMakeFiles/Option.dir/src/OpTrackingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpTrackingAction.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpTrackingAction.cc -o CMakeFiles/Option.dir/src/OpTrackingAction.cc.s
+
+CMakeFiles/Option.dir/src/OpTrajectory.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpTrajectory.cc.o: ../src/OpTrajectory.cc
+CMakeFiles/Option.dir/src/OpTrajectory.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Option.dir/src/OpTrajectory.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpTrajectory.cc.o -MF CMakeFiles/Option.dir/src/OpTrajectory.cc.o.d -o CMakeFiles/Option.dir/src/OpTrajectory.cc.o -c /Users/yjkim/workspace/git/Option/src/OpTrajectory.cc
+
+CMakeFiles/Option.dir/src/OpTrajectory.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpTrajectory.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpTrajectory.cc > CMakeFiles/Option.dir/src/OpTrajectory.cc.i
+
+CMakeFiles/Option.dir/src/OpTrajectory.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpTrajectory.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpTrajectory.cc -o CMakeFiles/Option.dir/src/OpTrajectory.cc.s
+
+CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o: ../src/OpTrajectoryPoint.cc
+CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o -MF CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o.d -o CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o -c /Users/yjkim/workspace/git/Option/src/OpTrajectoryPoint.cc
+
+CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpTrajectoryPoint.cc > CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.i
+
+CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpTrajectoryPoint.cc -o CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.s
+
+CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o: CMakeFiles/Option.dir/flags.make
+CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o: ../src/OpUserTrackInformation.cc
+CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o: CMakeFiles/Option.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o -MF CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o.d -o CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o -c /Users/yjkim/workspace/git/Option/src/OpUserTrackInformation.cc
+
+CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yjkim/workspace/git/Option/src/OpUserTrackInformation.cc > CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.i
+
+CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yjkim/workspace/git/Option/src/OpUserTrackInformation.cc -o CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.s
+
 # Object files for target Option
 Option_OBJECTS = \
 "CMakeFiles/Option.dir/Option.cc.o" \
+"CMakeFiles/Option.dir/src/OpActionInitialization.cc.o" \
 "CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o" \
-"CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o"
+"CMakeFiles/Option.dir/src/OpEventAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpMaterials.cc.o" \
+"CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o" \
+"CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o" \
+"CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpRun.cc.o" \
+"CMakeFiles/Option.dir/src/OpRunAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpStackingAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpSteppingAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpTrackingAction.cc.o" \
+"CMakeFiles/Option.dir/src/OpTrajectory.cc.o" \
+"CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o" \
+"CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o"
 
 # External object files for target Option
 Option_EXTERNAL_OBJECTS =
 
 Option: CMakeFiles/Option.dir/Option.cc.o
+Option: CMakeFiles/Option.dir/src/OpActionInitialization.cc.o
 Option: CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.o
+Option: CMakeFiles/Option.dir/src/OpEventAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpMaterials.cc.o
+Option: CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o
+Option: CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o
 Option: CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpRun.cc.o
+Option: CMakeFiles/Option.dir/src/OpRunAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpStackingAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpSteppingAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpTrackingAction.cc.o
+Option: CMakeFiles/Option.dir/src/OpTrajectory.cc.o
+Option: CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o
+Option: CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o
 Option: CMakeFiles/Option.dir/build.make
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4Tree.dylib
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4FR.dylib
@@ -142,9 +350,16 @@ Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4re
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4physicslists.dylib
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4tasking.dylib
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4parmodels.dylib
+Option: /opt/homebrew/lib/libXmu.dylib
+Option: /opt/homebrew/lib/libXext.dylib
+Option: /opt/homebrew/lib/libXt.dylib
+Option: /opt/homebrew/lib/libICE.dylib
+Option: /opt/homebrew/lib/libSM.dylib
+Option: /opt/homebrew/lib/libX11.dylib
 Option: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd
 Option: /opt/homebrew/opt/qt@5/lib/QtOpenGL.framework/QtOpenGL
 Option: /opt/homebrew/opt/qt@5/lib/QtPrintSupport.framework/QtPrintSupport
+Option: /usr/X11R6/lib/libGL.dylib
 Option: /opt/homebrew/opt/qt@5/lib/QtWidgets.framework/QtWidgets
 Option: /opt/homebrew/opt/qt@5/lib/Qt3DExtras.framework/Qt3DExtras
 Option: /opt/homebrew/opt/qt@5/lib/Qt3DInput.framework/Qt3DInput
@@ -174,7 +389,7 @@ Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4gl
 Option: /Users/yjkim/workspace/git/geant/geant4-10.7-release/install/lib/libG4ptl.0.0.2.dylib
 Option: /Users/yjkim/workspace/git/clhep/2.4.4.0/CLHEP/install/lib/libCLHEP-2.4.4.0.dylib
 Option: CMakeFiles/Option.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Option"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yjkim/workspace/git/Option/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Option"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Option.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

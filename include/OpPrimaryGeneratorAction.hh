@@ -1,22 +1,42 @@
-#ifndef OPPRIMARYGENERATORACTION_HH
-#define OPPRIMARYGENERATORACTION_HH 1
+#ifndef OpPrimaryGeneratorAction_h
+#define OpPrimaryGeneratorAction_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
-#include "G4Event.hh"
 #include "globals.hh"
+#include "G4VUserPrimaryGeneratorAction.hh"
+
+class OpDetectorConstruction;
+
+class G4Event;
+class G4GeneralParticleSource;
+class G4PhysicsTable;
 
 class OpPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
-	public:
-		OpPrimaryGeneratorAction();
-		virtual ~OpPrimaryGeneratorAction();
+ public:
+  OpPrimaryGeneratorAction(OpDetectorConstruction*);
+  ~OpPrimaryGeneratorAction();
 
-		virtual void GeneratePrimaries(G4Event*);
+  void GeneratePrimaries(G4Event*) override;
 
-		const G4ParticleGun* GetParticleGun() const {return fParticleGun;}
+  void BuildEmissionSpectrum();
+  void SetOptPhotonPolar(G4double);
+  void SetDecayTimeConstant(G4double);
 
-	private:
-		G4ParticleGun* fParticleGun;
+  void SetUseSampledEnergy(G4bool v) { fUseSampledEnergy = v; }
+
+ protected:
+  G4PhysicsTable* fIntegralTable;
+
+ private:
+  void SetOptPhotonPolar();
+  void SetOptPhotonTime();
+
+  OpDetectorConstruction* fDetector;
+  G4GeneralParticleSource* fParticleGun;
+
+  static G4bool fFirst;
+  G4double fTimeConstant;
+  G4bool fUseSampledEnergy;
 };
+
 #endif

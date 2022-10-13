@@ -1,30 +1,35 @@
+/control/verbose 2
+/run/verbose 2
+/run/initialize
+
 /vis/open OGL 600x600-0+0
-/vis/viewer/set/autoRefresh false
 /vis/verbose errors
 /vis/drawVolume
-
-/vis/viewer/set/viewpointVector -1 -1 0
-/vis/viewer/set/style wireframe
-/vis/viewer/set/auxiliaryEdge true
-/vis/viewer/set/lineSegmentsPerCircle 100
-
+#/vis/viewer/set/style wireframe
+#
+#
 /vis/scene/add/trajectories smooth
 /vis/modeling/trajectories/create/drawByCharge
 /vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
-/vis/modeling/trajectories/drawByCharge-0/default/setStepsPtsSize 2
-
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
+# To draw only gammas:
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+#
+# To invert the above, drawing all particles except gammas,
+# keep the above two lines but also add:
+#/vis/filtering/trajectories/particleFilter-0/invert true
+#
+# Many other options are available with /vis/modeling and /vis/filtering.
+# For example, to select colour by particle ID:
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton cyan
+#
+# To superimpose all of the events from a given run:
 /vis/scene/endOfEventAction accumulate
-
-/vis/scene/add/eventID
-/vis/scene/add/frame
-/vis/set/colour
-/vis/set/lineWidth
-
-/vis/geometry/set/visibility World 0 false
-/vis/geometry/set/colour Detector 1 0.8 0.8 1 0.3
-
-/vis/viewer/set/style surface
-/vis/viewer/set/hiddenMarker true
+#
+# Re-establish auto refreshing and verbosity:
 /vis/viewer/set/autoRefresh true
-
 /vis/verbose warnings
+
+/vis/viewer/zoomTo 100

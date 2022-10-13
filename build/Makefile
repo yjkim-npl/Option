@@ -198,6 +198,30 @@ Option.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/Option.cc.s
 .PHONY : Option.cc.s
 
+src/OpActionInitialization.o: src/OpActionInitialization.cc.o
+.PHONY : src/OpActionInitialization.o
+
+# target to build an object file
+src/OpActionInitialization.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.o
+.PHONY : src/OpActionInitialization.cc.o
+
+src/OpActionInitialization.i: src/OpActionInitialization.cc.i
+.PHONY : src/OpActionInitialization.i
+
+# target to preprocess a source file
+src/OpActionInitialization.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.i
+.PHONY : src/OpActionInitialization.cc.i
+
+src/OpActionInitialization.s: src/OpActionInitialization.cc.s
+.PHONY : src/OpActionInitialization.s
+
+# target to generate assembly for a file
+src/OpActionInitialization.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpActionInitialization.cc.s
+.PHONY : src/OpActionInitialization.cc.s
+
 src/OpDetectorConstruction.o: src/OpDetectorConstruction.cc.o
 .PHONY : src/OpDetectorConstruction.o
 
@@ -221,6 +245,102 @@ src/OpDetectorConstruction.s: src/OpDetectorConstruction.cc.s
 src/OpDetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpDetectorConstruction.cc.s
 .PHONY : src/OpDetectorConstruction.cc.s
+
+src/OpEventAction.o: src/OpEventAction.cc.o
+.PHONY : src/OpEventAction.o
+
+# target to build an object file
+src/OpEventAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.o
+.PHONY : src/OpEventAction.cc.o
+
+src/OpEventAction.i: src/OpEventAction.cc.i
+.PHONY : src/OpEventAction.i
+
+# target to preprocess a source file
+src/OpEventAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.i
+.PHONY : src/OpEventAction.cc.i
+
+src/OpEventAction.s: src/OpEventAction.cc.s
+.PHONY : src/OpEventAction.s
+
+# target to generate assembly for a file
+src/OpEventAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpEventAction.cc.s
+.PHONY : src/OpEventAction.cc.s
+
+src/OpMaterials.o: src/OpMaterials.cc.o
+.PHONY : src/OpMaterials.o
+
+# target to build an object file
+src/OpMaterials.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpMaterials.cc.o
+.PHONY : src/OpMaterials.cc.o
+
+src/OpMaterials.i: src/OpMaterials.cc.i
+.PHONY : src/OpMaterials.i
+
+# target to preprocess a source file
+src/OpMaterials.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpMaterials.cc.i
+.PHONY : src/OpMaterials.cc.i
+
+src/OpMaterials.s: src/OpMaterials.cc.s
+.PHONY : src/OpMaterials.s
+
+# target to generate assembly for a file
+src/OpMaterials.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpMaterials.cc.s
+.PHONY : src/OpMaterials.cc.s
+
+src/OpPhotonDetHit.o: src/OpPhotonDetHit.cc.o
+.PHONY : src/OpPhotonDetHit.o
+
+# target to build an object file
+src/OpPhotonDetHit.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.o
+.PHONY : src/OpPhotonDetHit.cc.o
+
+src/OpPhotonDetHit.i: src/OpPhotonDetHit.cc.i
+.PHONY : src/OpPhotonDetHit.i
+
+# target to preprocess a source file
+src/OpPhotonDetHit.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.i
+.PHONY : src/OpPhotonDetHit.cc.i
+
+src/OpPhotonDetHit.s: src/OpPhotonDetHit.cc.s
+.PHONY : src/OpPhotonDetHit.s
+
+# target to generate assembly for a file
+src/OpPhotonDetHit.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetHit.cc.s
+.PHONY : src/OpPhotonDetHit.cc.s
+
+src/OpPhotonDetSD.o: src/OpPhotonDetSD.cc.o
+.PHONY : src/OpPhotonDetSD.o
+
+# target to build an object file
+src/OpPhotonDetSD.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.o
+.PHONY : src/OpPhotonDetSD.cc.o
+
+src/OpPhotonDetSD.i: src/OpPhotonDetSD.cc.i
+.PHONY : src/OpPhotonDetSD.i
+
+# target to preprocess a source file
+src/OpPhotonDetSD.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.i
+.PHONY : src/OpPhotonDetSD.cc.i
+
+src/OpPhotonDetSD.s: src/OpPhotonDetSD.cc.s
+.PHONY : src/OpPhotonDetSD.s
+
+# target to generate assembly for a file
+src/OpPhotonDetSD.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPhotonDetSD.cc.s
+.PHONY : src/OpPhotonDetSD.cc.s
 
 src/OpPrimaryGeneratorAction.o: src/OpPrimaryGeneratorAction.cc.o
 .PHONY : src/OpPrimaryGeneratorAction.o
@@ -246,6 +366,198 @@ src/OpPrimaryGeneratorAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpPrimaryGeneratorAction.cc.s
 .PHONY : src/OpPrimaryGeneratorAction.cc.s
 
+src/OpRun.o: src/OpRun.cc.o
+.PHONY : src/OpRun.o
+
+# target to build an object file
+src/OpRun.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRun.cc.o
+.PHONY : src/OpRun.cc.o
+
+src/OpRun.i: src/OpRun.cc.i
+.PHONY : src/OpRun.i
+
+# target to preprocess a source file
+src/OpRun.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRun.cc.i
+.PHONY : src/OpRun.cc.i
+
+src/OpRun.s: src/OpRun.cc.s
+.PHONY : src/OpRun.s
+
+# target to generate assembly for a file
+src/OpRun.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRun.cc.s
+.PHONY : src/OpRun.cc.s
+
+src/OpRunAction.o: src/OpRunAction.cc.o
+.PHONY : src/OpRunAction.o
+
+# target to build an object file
+src/OpRunAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.o
+.PHONY : src/OpRunAction.cc.o
+
+src/OpRunAction.i: src/OpRunAction.cc.i
+.PHONY : src/OpRunAction.i
+
+# target to preprocess a source file
+src/OpRunAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.i
+.PHONY : src/OpRunAction.cc.i
+
+src/OpRunAction.s: src/OpRunAction.cc.s
+.PHONY : src/OpRunAction.s
+
+# target to generate assembly for a file
+src/OpRunAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpRunAction.cc.s
+.PHONY : src/OpRunAction.cc.s
+
+src/OpStackingAction.o: src/OpStackingAction.cc.o
+.PHONY : src/OpStackingAction.o
+
+# target to build an object file
+src/OpStackingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpStackingAction.cc.o
+.PHONY : src/OpStackingAction.cc.o
+
+src/OpStackingAction.i: src/OpStackingAction.cc.i
+.PHONY : src/OpStackingAction.i
+
+# target to preprocess a source file
+src/OpStackingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpStackingAction.cc.i
+.PHONY : src/OpStackingAction.cc.i
+
+src/OpStackingAction.s: src/OpStackingAction.cc.s
+.PHONY : src/OpStackingAction.s
+
+# target to generate assembly for a file
+src/OpStackingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpStackingAction.cc.s
+.PHONY : src/OpStackingAction.cc.s
+
+src/OpSteppingAction.o: src/OpSteppingAction.cc.o
+.PHONY : src/OpSteppingAction.o
+
+# target to build an object file
+src/OpSteppingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.o
+.PHONY : src/OpSteppingAction.cc.o
+
+src/OpSteppingAction.i: src/OpSteppingAction.cc.i
+.PHONY : src/OpSteppingAction.i
+
+# target to preprocess a source file
+src/OpSteppingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.i
+.PHONY : src/OpSteppingAction.cc.i
+
+src/OpSteppingAction.s: src/OpSteppingAction.cc.s
+.PHONY : src/OpSteppingAction.s
+
+# target to generate assembly for a file
+src/OpSteppingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.s
+.PHONY : src/OpSteppingAction.cc.s
+
+src/OpTrackingAction.o: src/OpTrackingAction.cc.o
+.PHONY : src/OpTrackingAction.o
+
+# target to build an object file
+src/OpTrackingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.o
+.PHONY : src/OpTrackingAction.cc.o
+
+src/OpTrackingAction.i: src/OpTrackingAction.cc.i
+.PHONY : src/OpTrackingAction.i
+
+# target to preprocess a source file
+src/OpTrackingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.i
+.PHONY : src/OpTrackingAction.cc.i
+
+src/OpTrackingAction.s: src/OpTrackingAction.cc.s
+.PHONY : src/OpTrackingAction.s
+
+# target to generate assembly for a file
+src/OpTrackingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.s
+.PHONY : src/OpTrackingAction.cc.s
+
+src/OpTrajectory.o: src/OpTrajectory.cc.o
+.PHONY : src/OpTrajectory.o
+
+# target to build an object file
+src/OpTrajectory.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectory.cc.o
+.PHONY : src/OpTrajectory.cc.o
+
+src/OpTrajectory.i: src/OpTrajectory.cc.i
+.PHONY : src/OpTrajectory.i
+
+# target to preprocess a source file
+src/OpTrajectory.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectory.cc.i
+.PHONY : src/OpTrajectory.cc.i
+
+src/OpTrajectory.s: src/OpTrajectory.cc.s
+.PHONY : src/OpTrajectory.s
+
+# target to generate assembly for a file
+src/OpTrajectory.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectory.cc.s
+.PHONY : src/OpTrajectory.cc.s
+
+src/OpTrajectoryPoint.o: src/OpTrajectoryPoint.cc.o
+.PHONY : src/OpTrajectoryPoint.o
+
+# target to build an object file
+src/OpTrajectoryPoint.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.o
+.PHONY : src/OpTrajectoryPoint.cc.o
+
+src/OpTrajectoryPoint.i: src/OpTrajectoryPoint.cc.i
+.PHONY : src/OpTrajectoryPoint.i
+
+# target to preprocess a source file
+src/OpTrajectoryPoint.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.i
+.PHONY : src/OpTrajectoryPoint.cc.i
+
+src/OpTrajectoryPoint.s: src/OpTrajectoryPoint.cc.s
+.PHONY : src/OpTrajectoryPoint.s
+
+# target to generate assembly for a file
+src/OpTrajectoryPoint.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrajectoryPoint.cc.s
+.PHONY : src/OpTrajectoryPoint.cc.s
+
+src/OpUserTrackInformation.o: src/OpUserTrackInformation.cc.o
+.PHONY : src/OpUserTrackInformation.o
+
+# target to build an object file
+src/OpUserTrackInformation.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.o
+.PHONY : src/OpUserTrackInformation.cc.o
+
+src/OpUserTrackInformation.i: src/OpUserTrackInformation.cc.i
+.PHONY : src/OpUserTrackInformation.i
+
+# target to preprocess a source file
+src/OpUserTrackInformation.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.i
+.PHONY : src/OpUserTrackInformation.cc.i
+
+src/OpUserTrackInformation.s: src/OpUserTrackInformation.cc.s
+.PHONY : src/OpUserTrackInformation.s
+
+# target to generate assembly for a file
+src/OpUserTrackInformation.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpUserTrackInformation.cc.s
+.PHONY : src/OpUserTrackInformation.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -262,12 +574,51 @@ help:
 	@echo "... Option.o"
 	@echo "... Option.i"
 	@echo "... Option.s"
+	@echo "... src/OpActionInitialization.o"
+	@echo "... src/OpActionInitialization.i"
+	@echo "... src/OpActionInitialization.s"
 	@echo "... src/OpDetectorConstruction.o"
 	@echo "... src/OpDetectorConstruction.i"
 	@echo "... src/OpDetectorConstruction.s"
+	@echo "... src/OpEventAction.o"
+	@echo "... src/OpEventAction.i"
+	@echo "... src/OpEventAction.s"
+	@echo "... src/OpMaterials.o"
+	@echo "... src/OpMaterials.i"
+	@echo "... src/OpMaterials.s"
+	@echo "... src/OpPhotonDetHit.o"
+	@echo "... src/OpPhotonDetHit.i"
+	@echo "... src/OpPhotonDetHit.s"
+	@echo "... src/OpPhotonDetSD.o"
+	@echo "... src/OpPhotonDetSD.i"
+	@echo "... src/OpPhotonDetSD.s"
 	@echo "... src/OpPrimaryGeneratorAction.o"
 	@echo "... src/OpPrimaryGeneratorAction.i"
 	@echo "... src/OpPrimaryGeneratorAction.s"
+	@echo "... src/OpRun.o"
+	@echo "... src/OpRun.i"
+	@echo "... src/OpRun.s"
+	@echo "... src/OpRunAction.o"
+	@echo "... src/OpRunAction.i"
+	@echo "... src/OpRunAction.s"
+	@echo "... src/OpStackingAction.o"
+	@echo "... src/OpStackingAction.i"
+	@echo "... src/OpStackingAction.s"
+	@echo "... src/OpSteppingAction.o"
+	@echo "... src/OpSteppingAction.i"
+	@echo "... src/OpSteppingAction.s"
+	@echo "... src/OpTrackingAction.o"
+	@echo "... src/OpTrackingAction.i"
+	@echo "... src/OpTrackingAction.s"
+	@echo "... src/OpTrajectory.o"
+	@echo "... src/OpTrajectory.i"
+	@echo "... src/OpTrajectory.s"
+	@echo "... src/OpTrajectoryPoint.o"
+	@echo "... src/OpTrajectoryPoint.i"
+	@echo "... src/OpTrajectoryPoint.s"
+	@echo "... src/OpUserTrackInformation.o"
+	@echo "... src/OpUserTrackInformation.i"
+	@echo "... src/OpUserTrackInformation.s"
 .PHONY : help
 
 
