@@ -1,4 +1,5 @@
 #include "OpDetectorConstruction.hh"
+#include "OpPhotonDetSD.hh"
 
 #include "G4Colour.hh"
 #include "G4RunManager.hh"
@@ -9,11 +10,20 @@
 #include "G4Cons.hh"
 #include "G4Orb.hh"
 #include "G4Sphere.hh"
+#include "G4SDManager.hh"
 #include "G4Trd.hh"
 #include "G4LogicalVolume.hh"
+#include "G4LogicalSkinSurface.hh"
+#include "G4LogicalBorderSurface.hh"
 #include "G4PVPlacement.hh"
 #include "G4VisAttributes.hh"
 #include "G4SystemOfUnits.hh"
+
+#include <utility>
+#include <iostream>
+#include <memory>
+#include <vector>
+#include <stdio.h>
 
 OpDetectorConstruction::OpDetectorConstruction()
 : G4VUserDetectorConstruction()
@@ -27,50 +37,150 @@ OpDetectorConstruction::~OpDetectorConstruction()
 
 G4VPhysicalVolume* OpDetectorConstruction::Construct()
 {
-
-	G4bool checkOverlaps = true;
-
+	//--------------------------------------------------
 	// World
-	G4double world_XY = 1000*mm;
-	G4double world_Z  = 1000*mm;
+	//--------------------------------------------------
 
-	G4Box* solidWorld = new G4Box("World",0.5*world_XY, 0.5*world_XY, 0.5*world_Z);
-    
-	G4LogicalVolume* logicWorld =                         
-		new G4LogicalVolume(solidWorld,fAir,"World");
-                                 
-	G4VPhysicalVolume* physWorld = 
-		new G4PVPlacement(0,G4ThreeVector(),logicWorld,"World", 0, false, 0,checkOverlaps);  
-    
-	// Env
-	G4double env_XY = 500*mm;
-	G4double env_Z  = 500*mm;
+	fWorldSizeX = 1000 *mm;
+	fWorldSizeY = 1000 *mm;
+	fWorldSizeZ = 1000 *mm;
+	G4VSolid* solidWorld =
+    	new G4Box("World", fWorldSizeX/2, fWorldSizeY/2, fWorldSizeZ/2);
 
-	G4Box* solidEnV = new G4Box("EnV",0.5*env_XY, 0.5*env_XY, 0.5*env_Z);
-    
-	G4LogicalVolume* logicEnV =                         
-		new G4LogicalVolume(solidEnV,fAir,"EnV");
-                                 
-	G4VPhysicalVolume* physEnV = 
-		new G4PVPlacement(0,G4ThreeVector(),logicEnV,"EnV", logicWorld, false, 0,checkOverlaps);  
-    
-	// Scintillator
-	G4double SC_XY = 210*mm;
-//	G4double SC_Z = 0.2*mm;
-	G4double SC_Z = 100*mm;
+	G4LogicalVolume* logicWorld =
+//    	new G4LogicalVolume(solidWorld, FindMaterial("G4_Galactic"), "World");
+    	new G4LogicalVolume(solidWorld, fVac, "World");
 
-	G4Box* solidSC = new G4Box("SC",0.5*SC_XY,0.5*SC_XY,0.5*SC_Z);
-	G4LogicalVolume* logicSC = 
-		new G4LogicalVolume(solidSC,fFP,"SC");
+	G4VPhysicalVolume* phyWorld =
+    	new G4PVPlacement(0, G4ThreeVector(0,0,0), logicWorld, "World", 0, false, 0, false);
+	//--------------------------------------------------
+	// Envelope
+	//--------------------------------------------------
 
-	G4VisAttributes* fVis_SC = new G4VisAttributes(G4Colour(G4Colour::Brown()));
-	fVis_SC -> SetVisibility(true);
-	fVis_SC -> SetForceWireframe(true);
-	logicSC -> SetVisAttributes(fVis_SC);
+	fEnvX = 0.9*fWorldSizeX;
+	fEnvY = 0.9*fWorldSizeY;
+	fEnvZ = 0.9*fWorldSizeZ;
+	G4VSolid* solidEnv =
+	    new G4Box("Envelope",fEnvX/2,fEnvY/2,fEnvZ/2);
+	G4LogicalVolume* logicEnv =
+//    	new G4LogicalVolume(solidEnv,FindMaterial("G4_AIR"),"Envelope");
+    	new G4LogicalVolume(solidEnv,fAir,"Envelope");
+	G4VPhysicalVolume* phyEnv =
+    	new G4PVPlacement(0,G4ThreeVector(0,0,0),logicEnv,"Envelope",logicWorld,false,1,false);
 
-	new G4PVPlacement(0,G4ThreeVector(),logicSC,"SC",logicWorld,false,0,checkOverlaps);
+	//--------------------------------------------------
+	// Scintillator (SC)
+	//--------------------------------------------------
 
-	return physWorld;
+	fSCX = 100 *mm; // default : 210
+	fSCY = 100 *mm; // default : 210
+	fSCZ = 10 *mm;   // default : 0.2
+	G4VSolid* solidScintillator =
+    	new G4Box("Scintillator",fSCX/2,fSCY/2,fSCZ/2);
+
+	G4LogicalVolume* logicScintillator = new G4LogicalVolume(
+//    	solidScintillator, FindMaterial("Polystyrene"), "Scintillator");
+    	solidScintillator, fPS, "Scintillator");
+
+	G4VPhysicalVolume* physScintillator = new G4PVPlacement(
+    	    0, G4ThreeVector(), logicScintillator, "Scintillator", logicEnv, false, 2,false);
+
+	G4VisAttributes* visS = new G4VisAttributes();
+	visS -> SetColor(G4Color::Cyan());
+	visS -> SetForceWireframe(true);
+	logicScintillator -> SetVisAttributes(visS);
+
+	//--------------------------------------------------
+	// MPPC(SensitiveDetector)
+	//--------------------------------------------------
+
+	G4SDManager* SDman = G4SDManager::GetSDMpointer();
+
+	fMPPCX = 10*mm;
+	fMPPCY = 10*mm;
+	fMPPCZ = 10*mm;
+
+	G4VSolid* solidMPPC =
+    	new G4Box("MPPC",fMPPCX/2,fMPPCY/2,fMPPCZ/2);
+	const int NofArrX = (int)fSCX/fMPPCX;
+	NofY = (int)fSCY/fMPPCY;
+	G4VPhysicalVolume* phyMPPC_left[NofY];
+	G4VPhysicalVolume* phyMPPC_right[NofY];
+	for(int a=0; a<NofY; a++)
+	{
+		G4LogicalVolume* logicMPPCL =
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPCL"+to_string(100+a));
+		G4LogicalVolume* logicMPPCR =
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPCR"+to_string(200+a));
+    	vec_logicMPPCL.push_back(logicMPPCL);
+    	vec_logicMPPCR.push_back(logicMPPCR);
+
+		G4VisAttributes* visMPPC = new G4VisAttributes();
+		visMPPC -> SetColor(G4Color::Brown());
+		logicMPPCL -> SetVisAttributes(visMPPC);
+		logicMPPCR -> SetVisAttributes(visMPPC);
+
+	    G4double posX1 = -(fSCX/2+fMPPCX/2);
+    	G4double posX2 =  (fSCX/2+fMPPCX/2);
+	    G4double posY  = -fSCY/2+(a+0.5)*fMPPCY;
+    	G4double posZ  = 0;
+	    G4ThreeVector pos1(posX1,posY,posZ);
+    	G4ThreeVector pos2(posX2,posY,posZ);
+	    G4int MPPCID1 = 100 + a;    // left side
+    	G4int MPPCID2 = 200 + a;    // right side
+		G4String MPPC1str = "MPPC_"+to_string(MPPCID1);
+		G4String MPPC2str = "MPPC_"+to_string(MPPCID2);
+	    phyMPPC_left[a] = new G4PVPlacement(
+    	        0,pos1,logicMPPCL,MPPC1str,logicEnv,false,MPPCID1,false);
+	    phyMPPC_right[a] = new G4PVPlacement(
+    	        0,pos2,logicMPPCR,MPPC2str,logicEnv,false,MPPCID2,false);
+		new G4LogicalSkinSurface("surfMPPC",logicMPPCL,SkinSurfSi);
+		new G4LogicalSkinSurface("surfMPPC",logicMPPCR,SkinSurfSi);
+	}
+
+	//-------------------------------------------------
+	// Applying Surface
+	//--------------------------------------------------
+	new G4LogicalBorderSurface("surfPStoAir",physScintillator,phyEnv,BorderSurfAir);
+	new G4LogicalBorderSurface("surfAirtoPS",phyEnv,physScintillator,BorderSurfAir);
+	for(int a=0; a<NofY; a++)
+	{
+		G4String left = "surfMPPCtoPSleft_"+to_string(100+a);
+		G4String right = "surfMPPCtoPSright_"+to_string(200+a);
+    	new G4LogicalBorderSurface(
+        	    left,physScintillator,phyMPPC_left[a],
+	            BorderSurfSi);
+    	new G4LogicalBorderSurface(
+        	    right,physScintillator,phyMPPC_right[a],
+            	BorderSurfSi);
+	}
+
+	return phyWorld;
+}
+
+void OpDetectorConstruction::ConstructSDandField()
+{
+	std::cout << "yjkim" << std::endl;
+	G4SDManager* SDman = G4SDManager::GetSDMpointer();
+	std::cout << NofY << std::endl;
+	for(int a=0; a<NofY; a++)
+	{
+		G4String SDName_L = "MPPCleft_"+to_string(100+a);
+		G4String SDName_R = "MPPCright_"+to_string(200+a);
+		G4String HCName_L = "MPPCleftHC_"+to_string(100+a);
+		G4String HCName_R = "MPPCrightHC_"+to_string(200+a);
+		G4int MPPCID_L = 100 + a;
+		G4int MPPCID_R = 200 + a;
+		G4VSensitiveDetector* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
+		G4VSensitiveDetector* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
+//		OpPhotonDetSD* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
+//		OpPhotonDetSD* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
+		SDman -> AddNewDetector(mppcSD_L);
+		SDman -> AddNewDetector(mppcSD_R);
+		vec_logicMPPCL[a] -> SetSensitiveDetector(mppcSD_L);
+		vec_logicMPPCR[a] -> SetSensitiveDetector(mppcSD_R);
+	}
+		std::cout << "yjkim3" << std::endl;
 }
 
 void OpDetectorConstruction::DefineMaterials()
@@ -155,22 +265,43 @@ void OpDetectorConstruction::DefineMaterials()
 	mpPS ->AddProperty("ABSLENGTH",opEn,AbsLen_PS,nEn);
 	mpPS ->AddProperty("FASTCOMPONENT",opEn,scintFast_PS,nEn);
 	mpPS ->AddConstProperty("SCINTILLATIONYIELD",10./keV);
-	mpPS ->AddConstProperty("RESOLUIONSCALE",1.0);
+	mpPS ->AddConstProperty("RESOLUTIONSCALE",1.0);
 	mpPS ->AddConstProperty("FASTTIMECONSTANT",2.8*ns);
 	fPS->SetMaterialPropertiesTable(mpPS);
 	fPS->GetIonisation()->SetBirksConstant(0.126*mm/MeV);
-
-	G4double refl_Si[nEn]; std::fill_n(refl_Si,nEn,0.);
+	//--------------------------------------------------
+	//  OpticalSurface - Si
+	//--------------------------------------------------
+	G4double refl_Si[nEn]; std::fill_n(refl_Si,nEn,0);
 	G4double eff_Si[nEn] =
 	{
-    	0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10,
+	    0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10,
 	    0.11, 0.13, 0.15, 0.17, 0.19, 0.20, 0.22, 0.23,
-    	0.24, 0.25, 0.24, 0.23, 0.21, 0.20, 0.17, 0.14, 0.10
+	    0.24, 0.25, 0.24, 0.23, 0.21, 0.20, 0.17, 0.14, 0.10
 	};
 	mpSi = new G4MaterialPropertiesTable();
-	mpSi ->AddProperty("REFLECTIVITY",opEn,refl_Si,nEn);
-	mpSi ->AddProperty("EFFICIENCY",opEn,eff_Si,nEn);
-
-	fSiPMSurf = new G4OpticalSurface("SiPMSurf",glisur,polished,dielectric_metal);
-	fSiPMSurf ->SetMaterialPropertiesTable(mpSi);
+	mpSi -> AddProperty("REFLECTIVITY",opEn,refl_Si,nEn);
+	mpSi -> AddProperty("EFFICIENCY",opEn,eff_Si,nEn);
+	SkinSurfSi = new G4OpticalSurface("SkinSurfSi",glisur,polished,dielectric_metal);
+	SkinSurfSi -> SetMaterialPropertiesTable(mpSi);
+	//--------------------------------------------------
+	//  OpticalSurface(PS to Si)
+	//--------------------------------------------------
+	G4double eff_surf_Si[nEn]; std::fill_n(eff_surf_Si,nEn,1.0);
+	G4double ref_surf_Si[nEn]; std::fill_n(ref_surf_Si,nEn,0.0);
+	G4MaterialPropertiesTable* mpSurf_Si = new G4MaterialPropertiesTable();
+	mpSurf_Si -> AddProperty("TRANSMITTANCE",opEn,eff_surf_Si,nEn);
+	mpSurf_Si -> AddProperty("REFLECTIVITY",opEn,ref_surf_Si,nEn);
+	BorderSurfSi = new G4OpticalSurface("BorderSurfSi",glisur,polished,dielectric_dielectric);
+	BorderSurfSi -> SetMaterialPropertiesTable(mpSurf_Si);
+	//--------------------------------------------------
+	//  OpticalSurface(PS to Air)
+	//--------------------------------------------------
+	G4double eff_surf_Air[nEn]; std::fill_n(eff_surf_Air,nEn,0.0);
+	G4double ref_surf_Air[nEn]; std::fill_n(ref_surf_Air,nEn,1.0);
+	G4MaterialPropertiesTable* mpSurf_Air = new G4MaterialPropertiesTable();
+	mpSurf_Air -> AddProperty("TRANSMITTANCE",opEn,eff_surf_Air,nEn);
+	mpSurf_Air -> AddProperty("REFLECTIVITY",opEn,ref_surf_Air,nEn);
+	BorderSurfAir = new G4OpticalSurface("BorderSurfAir",glisur,polished,dielectric_metal);
+	BorderSurfAir -> SetMaterialPropertiesTable(mpSurf_Air);
 }

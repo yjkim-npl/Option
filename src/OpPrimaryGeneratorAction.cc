@@ -23,10 +23,11 @@ OpPrimaryGeneratorAction::OpPrimaryGeneratorAction()
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName;
   G4ParticleDefinition* particle
-    = particleTable->FindParticle(particleName="gamma");
+    = particleTable->FindParticle(particleName="mu-");
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-  fParticleGun->SetParticleEnergy(6.*MeV);
+  fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.*mm));
+  fParticleGun->SetParticleEnergy(6.*keV);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -42,7 +43,7 @@ void OpPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   G4double x0 = 0.*mm;
   G4double y0 = 0.*mm;
-  G4double z0 = -750*mm;
+  G4double z0 = 0*mm;
   
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
 

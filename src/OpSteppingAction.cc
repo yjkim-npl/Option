@@ -14,8 +14,7 @@
 
 OpSteppingAction::OpSteppingAction(OpEventAction* eventAction)
 : G4UserSteppingAction(),
-  fEventAction(eventAction),
-  fScoringVolume(0)
+  fEventAction(eventAction)
 {
 	fOpProcess = nullptr;
 }
@@ -27,6 +26,7 @@ OpSteppingAction::~OpSteppingAction()
 
 void OpSteppingAction::UserSteppingAction(const G4Step* step)
 {
+	if(step -> GetTrack() -> GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()) return;
 	G4OpBoundaryProcessStatus theStatus = Undefined;
 
 	static G4ThreadLocal G4ProcessManager* OpManager = 
@@ -47,7 +47,7 @@ void OpSteppingAction::UserSteppingAction(const G4Step* step)
       ->GetVolume()->GetLogicalVolume();
       
   // check if we are in scoring volume
-  if (volume != fScoringVolume) return;
+//  if (volume != fScoringVolume) return;
 
   // collect energy deposited in this step
   G4double edepStep = step->GetTotalEnergyDeposit();
