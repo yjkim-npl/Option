@@ -2,6 +2,7 @@
 #include "OpActionInitialization.hh"
 
 #include "G4RunManagerFactory.hh"
+#include "G4RunManager.hh"
 
 #include "G4UImanager.hh"
 #include "G4OpticalPhysics.hh"
@@ -19,8 +20,12 @@ int main(int argc,char** argv)
   if ( argc == 1 ) {
     ui = new G4UIExecutive(argc, argv);
   }
-  auto* runManager =
-    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
+  G4int seed = 0;
+  if(argc >2)
+	  seed = atoi(argv[1]);
+//  auto* runManager =
+//    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
+  G4RunManager* runManager = new G4RunManager;
 
   runManager->SetUserInitialization(new OpDetectorConstruction());
 
@@ -29,8 +34,8 @@ int main(int argc,char** argv)
   G4OpticalPhysics* opticalPhysics = new G4OpticalPhysics();
   opticalPhysics -> Configure(kCerenkov, true);
   opticalPhysics -> Configure(kScintillation, true);
-  opticalPhysics -> SetTrackSecondariesFirst(kCerenkov, true);
-  opticalPhysics -> SetTrackSecondariesFirst(kScintillation,true);
+//  opticalPhysics -> SetTrackSecondariesFirst(kCerenkov, true);
+//  opticalPhysics -> SetTrackSecondariesFirst(kScintillation,true);
   physicsList -> RegisterPhysics(opticalPhysics);
   physicsList->SetVerboseLevel(1);
   runManager->SetUserInitialization(physicsList);

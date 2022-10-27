@@ -1,32 +1,33 @@
 #ifndef OpSteppingAction_h
 #define OpSteppingAction_h 1
 
+#include "G4Types.hh"
 #include "G4UserSteppingAction.hh"
-#include "globals.hh"
 
+class OpDetectorConstruction;
 class OpEventAction;
 
-class G4LogicalVolume;
 class G4OpBoundaryProcess;
-
-/// Stepping action class
-/// 
+class G4Track;
+class G4StepPoint;
 
 class OpSteppingAction : public G4UserSteppingAction
 {
-  public:
-    OpSteppingAction(OpEventAction* eventAction);
-    virtual ~OpSteppingAction();
+ public:
+  OpSteppingAction(OpEventAction*);
+  ~OpSteppingAction();
 
-    // method from the base class
-    virtual void UserSteppingAction(const G4Step*);
+  void UserSteppingAction(const G4Step*) override;
 
-  private:
-    OpEventAction*  fEventAction;
-    G4LogicalVolume* fScoringVolume;
-	G4OpBoundaryProcess* fOpProcess;
+ private:
+  OpDetectorConstruction* fDetector;
+  OpEventAction* fEventAction;
+
+  G4double leak_E;
+  std::tuple<G4double,G4double,G4double> leak_p;
+  std::tuple<G4double,G4double,G4double> leak_v;
+  G4int pdgID;
+
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif

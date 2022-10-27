@@ -19,6 +19,19 @@ else()
 endif()
 
 #----------------------------------------------------------------------------
+list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
+set(ACTIVATE_EVE OFF CACHE INTERNAL "")
+if(ACTIVATE_EVE)
+    add_definitions(-DACTIVATE_EVE)
+endif(ACTIVATE_EVE)
+if(ACTIVATE_EVE)
+    find_package(ROOT REQUIRED COMPONENTS RIO Net Eve EG RGL Geom Gui Graf Graf3d Ged Matrix MathCor    e)
+else(ACTIVATE_EVE)
+    find_package(ROOT REQUIRED COMPONENTS RIO Net Geom Gui Graf Graf3d Ged Matrix MathCore)
+endif(ACTIVATE_EVE)
+
+include(${ROOT_USE_FILE})
+#----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
 #
@@ -36,7 +49,7 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(Option Option.cc ${sources} ${headers})
-target_link_libraries(Option ${Geant4_LIBRARIES})
+target_link_libraries(Option ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

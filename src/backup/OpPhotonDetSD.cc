@@ -39,11 +39,13 @@ void OpPhotonDetSD::Initialize(G4HCofThisEvent* HCE)
 
 G4bool OpPhotonDetSD::ProcessHits(G4Step* step, G4TouchableHistory* TH)
 {
+	std::cout << "yjkim SD" << std::endl;
 	if(step->GetTrack()->GetDefinition() !=G4OpticalPhoton::OpticalPhotonDefinition())
 		return false;
 
 	G4int OpPhotonDetID = step -> GetPostStepPoint() 
 							-> GetTouchable() -> GetVolume(1) -> GetCopyNo();
+	std::cout << OpPhotonDetID << std::endl;
 	G4int NofHits = fPhotonDetHitCollection -> entries();
 	G4double hitTime = step -> GetPostStepPoint() -> GetGlobalTime();
 	G4double energy = step -> GetTrack() -> GetTotalEnergy();

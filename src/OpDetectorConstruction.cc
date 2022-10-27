@@ -1,5 +1,5 @@
 #include "OpDetectorConstruction.hh"
-#include "OpPhotonDetSD.hh"
+//#include "OpPhotonDetSD.hh"
 
 #include "G4Colour.hh"
 #include "G4RunManager.hh"
@@ -28,7 +28,6 @@
 OpDetectorConstruction::OpDetectorConstruction()
 : G4VUserDetectorConstruction()
 {
-	DefineMaterials();
 }
 
 OpDetectorConstruction::~OpDetectorConstruction()
@@ -37,6 +36,7 @@ OpDetectorConstruction::~OpDetectorConstruction()
 
 G4VPhysicalVolume* OpDetectorConstruction::Construct()
 {
+	DefineMaterials();
 	//--------------------------------------------------
 	// World
 	//--------------------------------------------------
@@ -74,7 +74,7 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 
 	fSCX = 100 *mm; // default : 210
 	fSCY = 100 *mm; // default : 210
-	fSCZ = 10 *mm;   // default : 0.2
+	fSCZ = 1 *mm;   // default : 0.2
 	G4VSolid* solidScintillator =
     	new G4Box("Scintillator",fSCX/2,fSCY/2,fSCZ/2);
 
@@ -96,22 +96,28 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 
 	G4SDManager* SDman = G4SDManager::GetSDMpointer();
 
-	fMPPCX = 10*mm;
+	fMPPCX = 5*mm;
+	fGlassX = 5*mm;
 	fMPPCY = 10*mm;
 	fMPPCZ = 10*mm;
 
 	G4VSolid* solidMPPC =
     	new G4Box("MPPC",fMPPCX/2,fMPPCY/2,fMPPCZ/2);
+	G4VSolid* solidGlass = 
+		new G4Box("Glass",fGlassX/2,fMPPCY/2,fMPPCZ/2);
 	const int NofArrX = (int)fSCX/fMPPCX;
 	NofY = (int)fSCY/fMPPCY;
 	G4VPhysicalVolume* phyMPPC_left[NofY];
 	G4VPhysicalVolume* phyMPPC_right[NofY];
+
+	G4LogicalVolume* logicGlass =
+   		new G4LogicalVolume(solidGlass,fGlass,"Glass");
 	for(int a=0; a<NofY; a++)
 	{
 		G4LogicalVolume* logicMPPCL =
-    		new G4LogicalVolume(solidMPPC,fSi,"MPPCL"+to_string(100+a));
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(100+a));
 		G4LogicalVolume* logicMPPCR =
-    		new G4LogicalVolume(solidMPPC,fSi,"MPPCR"+to_string(200+a));
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(200+a));
     	vec_logicMPPCL.push_back(logicMPPCL);
     	vec_logicMPPCR.push_back(logicMPPCR);
 
@@ -120,20 +126,28 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 		logicMPPCL -> SetVisAttributes(visMPPC);
 		logicMPPCR -> SetVisAttributes(visMPPC);
 
-	    G4double posX1 = -(fSCX/2+fMPPCX/2);
-    	G4double posX2 =  (fSCX/2+fMPPCX/2);
+	    G4double posMPPCX1 = -(fSCX/2+fGlassX+fMPPCX/2);
+    	G4double posMPPCX2 =  (fSCX/2+fGlassX+fMPPCX/2);
+	    G4double posGlassX1 = -(fSCX/2+fGlassX/2);
+    	G4double posGlassX2 =  (fSCX/2+fGlassX/2);
 	    G4double posY  = -fSCY/2+(a+0.5)*fMPPCY;
     	G4double posZ  = 0;
-	    G4ThreeVector pos1(posX1,posY,posZ);
-    	G4ThreeVector pos2(posX2,posY,posZ);
+	    G4ThreeVector posMPPC1(posMPPCX1,posY,posZ);
+    	G4ThreeVector posMPPC2(posMPPCX2,posY,posZ);
+	    G4ThreeVector posGlass1(posGlassX1,posY,posZ);
+    	G4ThreeVector posGlass2(posGlassX2,posY,posZ);
 	    G4int MPPCID1 = 100 + a;    // left side
     	G4int MPPCID2 = 200 + a;    // right side
-		G4String MPPC1str = "MPPC_"+to_string(MPPCID1);
-		G4String MPPC2str = "MPPC_"+to_string(MPPCID2);
+		G4String MPPC1str = "MPPC_"+std::to_string(MPPCID1);
+		G4String MPPC2str = "MPPC_"+std::to_string(MPPCID2);
+		G4String Glass1str = "Glass_"+std::to_string(1000+a);
+		G4String Glass2str = "Glass_"+std::to_string(2000+a);
 	    phyMPPC_left[a] = new G4PVPlacement(
-    	        0,pos1,logicMPPCL,MPPC1str,logicEnv,false,MPPCID1,false);
+    	        0,posMPPC1,logicMPPCL,MPPC1str,logicEnv,false,MPPCID1,false);
 	    phyMPPC_right[a] = new G4PVPlacement(
-    	        0,pos2,logicMPPCR,MPPC2str,logicEnv,false,MPPCID2,false);
+    	        0,posMPPC2,logicMPPCR,MPPC2str,logicEnv,false,MPPCID2,false);
+		new G4PVPlacement(0,posGlass1,logicGlass,Glass1str,logicEnv,false,1000+a,false);
+		new G4PVPlacement(0,posGlass2,logicGlass,Glass2str,logicEnv,false,2000+a,false);
 		new G4LogicalSkinSurface("surfMPPC",logicMPPCL,SkinSurfSi);
 		new G4LogicalSkinSurface("surfMPPC",logicMPPCR,SkinSurfSi);
 	}
@@ -142,46 +156,46 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 	// Applying Surface
 	//--------------------------------------------------
 	new G4LogicalBorderSurface("surfPStoAir",physScintillator,phyEnv,BorderSurfAir);
-	new G4LogicalBorderSurface("surfAirtoPS",phyEnv,physScintillator,BorderSurfAir);
-	for(int a=0; a<NofY; a++)
-	{
-		G4String left = "surfMPPCtoPSleft_"+to_string(100+a);
-		G4String right = "surfMPPCtoPSright_"+to_string(200+a);
-    	new G4LogicalBorderSurface(
-        	    left,physScintillator,phyMPPC_left[a],
-	            BorderSurfSi);
-    	new G4LogicalBorderSurface(
-        	    right,physScintillator,phyMPPC_right[a],
-            	BorderSurfSi);
-	}
+//	new G4LogicalBorderSurface("surfAirtoPS",phyEnv,physScintillator,BorderSurfAir);
+//	for(int a=0; a<NofY; a++)
+//	{
+//		G4String left = "surfMPPCtoPSleft_"+std::to_string(100+a);
+//		G4String right = "surfMPPCtoPSright_"+std::to_string(200+a);
+//    	new G4LogicalBorderSurface(
+//        	    left,physScintillator,phyMPPC_left[a],
+//	            BorderSurfSi);
+//    	new G4LogicalBorderSurface(
+//        	    right,physScintillator,phyMPPC_right[a],
+//            	BorderSurfSi);
+//	}
 
 	return phyWorld;
 }
 
-void OpDetectorConstruction::ConstructSDandField()
-{
-	std::cout << "yjkim" << std::endl;
-	G4SDManager* SDman = G4SDManager::GetSDMpointer();
-	std::cout << NofY << std::endl;
-	for(int a=0; a<NofY; a++)
-	{
-		G4String SDName_L = "MPPCleft_"+to_string(100+a);
-		G4String SDName_R = "MPPCright_"+to_string(200+a);
-		G4String HCName_L = "MPPCleftHC_"+to_string(100+a);
-		G4String HCName_R = "MPPCrightHC_"+to_string(200+a);
-		G4int MPPCID_L = 100 + a;
-		G4int MPPCID_R = 200 + a;
-		G4VSensitiveDetector* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
-		G4VSensitiveDetector* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
-//		OpPhotonDetSD* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
-//		OpPhotonDetSD* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
-		SDman -> AddNewDetector(mppcSD_L);
-		SDman -> AddNewDetector(mppcSD_R);
-		vec_logicMPPCL[a] -> SetSensitiveDetector(mppcSD_L);
-		vec_logicMPPCR[a] -> SetSensitiveDetector(mppcSD_R);
-	}
-		std::cout << "yjkim3" << std::endl;
-}
+//void OpDetectorConstruction::ConstructSDandField()
+//{
+//	std::cout << "yjkim" << std::endl;
+//	G4SDManager* SDman = G4SDManager::GetSDMpointer();
+//	std::cout << NofY << std::endl;
+//	for(int a=0; a<NofY; a++)
+//	{
+//		G4String SDName_L = "MPPCleft_"+std::to_string(100+a);
+//		G4String SDName_R = "MPPCright_"+std::to_string(200+a);
+//		G4String HCName_L = "MPPCleftHC_"+std::to_string(100+a);
+//		G4String HCName_R = "MPPCrightHC_"+std::to_string(200+a);
+//		G4int MPPCID_L = 100 + a;
+//		G4int MPPCID_R = 200 + a;
+//		G4VSensitiveDetector* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
+//		G4VSensitiveDetector* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
+////		OpPhotonDetSD* mppcSD_L = new OpPhotonDetSD(SDName_L,HCName_L,MPPCID_L);
+////		OpPhotonDetSD* mppcSD_R = new OpPhotonDetSD(SDName_R,HCName_R,MPPCID_R);
+//		SDman -> AddNewDetector(mppcSD_L);
+//		SDman -> AddNewDetector(mppcSD_R);
+//		vec_logicMPPCL[a] -> SetSensitiveDetector(mppcSD_L);
+//		vec_logicMPPCR[a] -> SetSensitiveDetector(mppcSD_R);
+//	}
+//		std::cout << "yjkim3" << std::endl;
+//}
 
 void OpDetectorConstruction::DefineMaterials()
 {
@@ -214,11 +228,17 @@ void OpDetectorConstruction::DefineMaterials()
 	fFP -> AddElement(C,2);
 	fFP -> AddElement(F,2);
 
+	// Glass
+	fGlass = new G4Material("Glass",1.032*g/cm3,2);
+	fGlass -> AddElement(C,91.533*perCent);
+	fGlass -> AddElement(H,8.467*perCent);
+
 	// Material Table :: Apply Optical properties
 	G4MaterialPropertiesTable* mpAir;
 	G4MaterialPropertiesTable* mpPS;
 	G4MaterialPropertiesTable* mpSi;
 	G4MaterialPropertiesTable* mpFP;
+	G4MaterialPropertiesTable* mpGlass;
 	G4double opEn[] = // from 900nm to 300nm with 25nm step
 	{
     	1.37760*eV, 1.41696*eV, 1.45864*eV, 1.50284*eV, 1.54980*eV, 1.59980*eV,
@@ -269,6 +289,13 @@ void OpDetectorConstruction::DefineMaterials()
 	mpPS ->AddConstProperty("FASTTIMECONSTANT",2.8*ns);
 	fPS->SetMaterialPropertiesTable(mpPS);
 	fPS->GetIonisation()->SetBirksConstant(0.126*mm/MeV);
+
+	G4double RI_Glass[nEn];			std::fill_n(RI_Glass,nEn,1.52);
+	G4double Abslength_Glass[nEn];	std::fill_n(Abslength_Glass,nEn,420.*cm);
+	mpGlass = new G4MaterialPropertiesTable();
+	mpGlass -> AddProperty("RINDEX",opEn,RI_Glass,nEn);
+	mpGlass -> AddProperty("ABSLENGTH",opEn,Abslength_Glass,nEn);
+	fGlass -> SetMaterialPropertiesTable(mpGlass);
 	//--------------------------------------------------
 	//  OpticalSurface - Si
 	//--------------------------------------------------
@@ -279,6 +306,7 @@ void OpDetectorConstruction::DefineMaterials()
 	    0.11, 0.13, 0.15, 0.17, 0.19, 0.20, 0.22, 0.23,
 	    0.24, 0.25, 0.24, 0.23, 0.21, 0.20, 0.17, 0.14, 0.10
 	};
+	std::fill_n(eff_Si,nEn,1);	// for checking
 	mpSi = new G4MaterialPropertiesTable();
 	mpSi -> AddProperty("REFLECTIVITY",opEn,refl_Si,nEn);
 	mpSi -> AddProperty("EFFICIENCY",opEn,eff_Si,nEn);
