@@ -101,8 +101,9 @@ void OpEventAction::EndOfEventAction(const G4Event* evt)
 //  }
 
 
-//	frunAction -> OpRunAction::fill(fCount, 0.,0.);
-	frunAction -> fill(fCount, 0.,0.);
+	frunAction -> fillcount(fCount);
+	frunAction -> update();
+	frunAction -> clear();
 
 }
 

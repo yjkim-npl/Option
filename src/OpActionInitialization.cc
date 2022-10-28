@@ -47,7 +47,7 @@ void OpActionInitialization::Build() const
   OpEventAction* eventAction = new OpEventAction(runAction,det);
   SetUserAction(eventAction);
   
-  SetUserAction(new OpSteppingAction(eventAction));
+  SetUserAction(new OpSteppingAction(eventAction,runAction));
 }  
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

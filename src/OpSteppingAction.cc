@@ -24,8 +24,9 @@
 #include "G4VPhysicalVolume.hh"
 
 
-OpSteppingAction::OpSteppingAction(OpEventAction* event)
-  : fEventAction(event)
+OpSteppingAction::OpSteppingAction(OpEventAction* event, OpRunAction* run)
+  : fEventAction(event),
+	fRunAction(run)
 {
 }
 OpSteppingAction::~OpSteppingAction()
@@ -36,8 +37,10 @@ void OpSteppingAction::UserSteppingAction(const G4Step* step)
 {
   G4Track* track = step->GetTrack();
   G4ParticleDefinition* particle = track -> GetDefinition();
-  G4StepPoint* prePoint  = step->GetPreStepPoint();
-  G4Material* prevMaterial = prePoint -> GetMaterial();
+
+  G4StepPoint* prevPoint  = step->GetPreStepPoint();
+  G4Material* prevMaterial = prevPoint -> GetMaterial();
+	  
   G4StepPoint* postPoint = step->GetPostStepPoint();
   G4Material* postMaterial = postPoint -> GetMaterial();
   if(particle != G4OpticalPhoton::OpticalPhotonDefinition()) return;
@@ -48,19 +51,44 @@ void OpSteppingAction::UserSteppingAction(const G4Step* step)
 	if(prevMaterial->GetName().find("Glass") != std::string::npos)
 	{
 		fEventAction -> photon_count();
+	  // wavlen
+	  G4double energy = track -> GetTotalEnergy();
+	  G4double wav = ETowav(energy);
+	  fRunAction -> fillWavlen(wav);
+
+	  // time
+	  G4double time = postPoint -> GetGlobalTime();
+	  fRunAction -> fillTime(time);
+
+	  // edep
+
+	  // DetID
+	  G4int detID = postPoint -> GetPhysicalVolume() -> GetCopyNo();
+	  fRunAction -> fillDetID(detID);
+
+	  // final position : Vxyz
+	  G4ThreeVector pos = postPoint -> GetPosition();
+	  fRunAction -> fillVxyz(pos.x(),pos.y(),pos.z());
+	  // initial & final E : E_if
+	  // initial momentum Pi
+	  // final momentum Pf
+	  G4ThreeVector mom = track -> GetMomentum();
+	  fRunAction -> fillPf(mom.x(),mom.y(),mom.z());
 	}
   }
+
+
 //		 std::cout << "optical photon reached at Si" << std::endl;
 //  G4int pdgID = particle -> GetPDGEncoding();
 //  OpUserTrackInformation* trackInformation =
 //    (OpUserTrackInformation*) track->GetUserInformation();
 
 
-//  G4VPhysicalVolume* prePV  = prePoint->GetPhysicalVolume();
+//  G4VPhysicalVolume* prePV  = prevPoint->GetPhysicalVolume();
 //  G4LogicalVolume* preLV    = prePV -> GetLogicalVolume();
 //  G4VPhysicalVolume* postPV = postPoint->GetPhysicalVolume();
 //  G4LogicalVolume* postLV   = postPV -> GetLogicalVolume();
-//  G4TouchableHandle theTouchable = prePoint -> GetTouchableHandle();
+//  G4TouchableHandle theTouchable = prevPoint -> GetTouchableHandle();
 //
 //  G4String prePVname  = " ";
 //  G4String postPVname = " ";
@@ -72,9 +100,9 @@ void OpSteppingAction::UserSteppingAction(const G4Step* step)
 //	  G4double py = track -> GetMomentum().y();
 //	  G4double pz = track -> GetMomentum().z();
 //	  leak_p = make_tuple(px,py,pz);
-//	  G4double vx = prePoint -> GetPosition().x();
-//	  G4double vy = prePoint -> GetPosition().y();
-//	  G4double vz = prePoint -> GetPosition().z();
+//	  G4double vx = prevPoint -> GetPosition().x();
+//	  G4double vy = prevPoint -> GetPosition().y();
+//	  G4double vz = prevPoint -> GetPosition().z();
 //	  leak_v = make_tuple(vx,vy,vz);
 
 //	  fEventAction -> fillLeaks(leak_E,leak_p,leak_v);

@@ -8,6 +8,10 @@
 #include "TFile.h"
 #include "TTree.h"
 
+#include <vector>
+#include <tuple>
+using namespace std;
+
 class G4Run;
 
 class OpRunAction : public G4UserRunAction
@@ -16,22 +20,34 @@ class OpRunAction : public G4UserRunAction
     OpRunAction();
     virtual ~OpRunAction();
 
-    // virtual G4Run* GenerateRun();
     virtual void BeginOfRunAction(const G4Run*);
     virtual void   EndOfRunAction(const G4Run*);
 
-//    void AddEdep (G4double edep); 
+	void clear();
+	void fillcount(G4int count)			{fcount = count;}
+	void fillWavlen(G4double wavlen) 	{fWavlen.push_back(wavlen);}
+	void fillTime(G4double time) 		{fTime.push_back(time);}
+	void fillDetID(G4int ID)			{fDetID.push_back(ID);}
+	void fillVxyz(G4double X,G4double Y,G4double Z);
+	void fillPf(G4double pX, G4double pY, G4double pZ);
+	void update()
+		{T -> Fill();}
 
+  private:
 	TFile* F;
 	TTree* T;
 
-	void fill(G4int count, G4double edep, G4double time);
-
 	int fcount;
-	double fEdep;
-	double fTime;
+	vector<double> fWavlen;
+	vector<double> fTime;
+	vector<int> fDetID;
+	vector<double> fVx;
+	vector<double> fVy;
+	vector<double> fVz;
+	vector<double> fPx;
+	vector<double> fPy;
+	vector<double> fPz;
 
-  private:
 };
 
 #endif

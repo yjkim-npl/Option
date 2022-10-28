@@ -27,7 +27,7 @@ OpPrimaryGeneratorAction::OpPrimaryGeneratorAction()
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
   fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.*mm));
-  fParticleGun->SetParticleEnergy(6.*keV);
+  fParticleGun->SetParticleEnergy(10.*GeV);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

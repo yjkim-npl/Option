@@ -21,8 +21,9 @@ int main(int argc,char** argv)
     ui = new G4UIExecutive(argc, argv);
   }
   G4int seed = 0;
-  if(argc >2)
-	  seed = atoi(argv[1]);
+  G4String filename;
+  if(argc >2)  	seed = atoi(argv[2]);
+  if(argc >3) 	filename = argv[3];
 //  auto* runManager =
 //    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
   G4RunManager* runManager = new G4RunManager;
@@ -55,7 +56,7 @@ int main(int argc,char** argv)
 
   // Process macro or start UI session
   //
-  if ( ! ui ) { 
+  if ( argc != 1 ) { 
     // batch mode
     G4String command = "/control/execute ";
     G4String fileName = argv[1];

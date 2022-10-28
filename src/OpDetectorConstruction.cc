@@ -72,8 +72,8 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 	// Scintillator (SC)
 	//--------------------------------------------------
 
-	fSCX = 100 *mm; // default : 210
-	fSCY = 100 *mm; // default : 210
+	fSCX = 210 *mm; // default : 210
+	fSCY = 210 *mm; // default : 210
 	fSCZ = 1 *mm;   // default : 0.2
 	G4VSolid* solidScintillator =
     	new G4Box("Scintillator",fSCX/2,fSCY/2,fSCZ/2);
@@ -96,10 +96,10 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 
 	G4SDManager* SDman = G4SDManager::GetSDMpointer();
 
-	fMPPCX = 5*mm;
-	fGlassX = 5*mm;
-	fMPPCY = 10*mm;
-	fMPPCZ = 10*mm;
+	fMPPCX = 0.5*mm;
+	fGlassX = 0.5*mm;
+	fMPPCY = 1*mm;
+	fMPPCZ = 1*mm;
 
 	G4VSolid* solidMPPC =
     	new G4Box("MPPC",fMPPCX/2,fMPPCY/2,fMPPCZ/2);
@@ -155,7 +155,7 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 	//-------------------------------------------------
 	// Applying Surface
 	//--------------------------------------------------
-	new G4LogicalBorderSurface("surfPStoAir",physScintillator,phyEnv,BorderSurfAir);
+//	new G4LogicalBorderSurface("surfPStoAir",physScintillator,phyEnv,BorderSurfAir);
 //	new G4LogicalBorderSurface("surfAirtoPS",phyEnv,physScintillator,BorderSurfAir);
 //	for(int a=0; a<NofY; a++)
 //	{
@@ -284,7 +284,7 @@ void OpDetectorConstruction::DefineMaterials()
 	mpPS ->AddProperty("RINDEX",opEn,RI_PS,nEn);
 	mpPS ->AddProperty("ABSLENGTH",opEn,AbsLen_PS,nEn);
 	mpPS ->AddProperty("FASTCOMPONENT",opEn,scintFast_PS,nEn);
-	mpPS ->AddConstProperty("SCINTILLATIONYIELD",10./keV);
+	mpPS ->AddConstProperty("SCINTILLATIONYIELD",200./MeV);
 	mpPS ->AddConstProperty("RESOLUTIONSCALE",1.0);
 	mpPS ->AddConstProperty("FASTTIMECONSTANT",2.8*ns);
 	fPS->SetMaterialPropertiesTable(mpPS);
