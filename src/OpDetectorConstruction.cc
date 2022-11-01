@@ -115,9 +115,9 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
 	for(int a=0; a<NofY; a++)
 	{
 		G4LogicalVolume* logicMPPCL =
-    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(100+a));
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(1000+a));
 		G4LogicalVolume* logicMPPCR =
-    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(200+a));
+    		new G4LogicalVolume(solidMPPC,fSi,"MPPC"+std::to_string(2000+a));
     	vec_logicMPPCL.push_back(logicMPPCL);
     	vec_logicMPPCR.push_back(logicMPPCR);
 
@@ -136,18 +136,18 @@ G4VPhysicalVolume* OpDetectorConstruction::Construct()
     	G4ThreeVector posMPPC2(posMPPCX2,posY,posZ);
 	    G4ThreeVector posGlass1(posGlassX1,posY,posZ);
     	G4ThreeVector posGlass2(posGlassX2,posY,posZ);
-	    G4int MPPCID1 = 100 + a;    // left side
-    	G4int MPPCID2 = 200 + a;    // right side
+	    G4int MPPCID1 = 1000 + a;    // left side
+    	G4int MPPCID2 = 2000 + a;    // right side
 		G4String MPPC1str = "MPPC_"+std::to_string(MPPCID1);
 		G4String MPPC2str = "MPPC_"+std::to_string(MPPCID2);
-		G4String Glass1str = "Glass_"+std::to_string(1000+a);
-		G4String Glass2str = "Glass_"+std::to_string(2000+a);
+		G4String Glass1str = "Glass_"+std::to_string(10000+a);
+		G4String Glass2str = "Glass_"+std::to_string(20000+a);
 	    phyMPPC_left[a] = new G4PVPlacement(
     	        0,posMPPC1,logicMPPCL,MPPC1str,logicEnv,false,MPPCID1,false);
 	    phyMPPC_right[a] = new G4PVPlacement(
     	        0,posMPPC2,logicMPPCR,MPPC2str,logicEnv,false,MPPCID2,false);
-		new G4PVPlacement(0,posGlass1,logicGlass,Glass1str,logicEnv,false,1000+a,false);
-		new G4PVPlacement(0,posGlass2,logicGlass,Glass2str,logicEnv,false,2000+a,false);
+		new G4PVPlacement(0,posGlass1,logicGlass,Glass1str,logicEnv,false,10000+a,false);
+		new G4PVPlacement(0,posGlass2,logicGlass,Glass2str,logicEnv,false,20000+a,false);
 		new G4LogicalSkinSurface("surfMPPC",logicMPPCL,SkinSurfSi);
 		new G4LogicalSkinSurface("surfMPPC",logicMPPCR,SkinSurfSi);
 	}

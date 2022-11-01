@@ -4,6 +4,7 @@
 #include "OpRunAction.hh"
 #include "OpEventAction.hh"
 #include "OpSteppingAction.hh"
+#include "OpTrackingAction.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -47,6 +48,7 @@ void OpActionInitialization::Build() const
   OpEventAction* eventAction = new OpEventAction(runAction,det);
   SetUserAction(eventAction);
   
+  SetUserAction(new OpTrackingAction(runAction,eventAction));
   SetUserAction(new OpSteppingAction(eventAction,runAction));
 }  
 

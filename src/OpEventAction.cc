@@ -23,6 +23,7 @@ OpEventAction::OpEventAction(OpRunAction* runAction, OpDetectorConstruction* det
 {
 	G4RunManager::GetRunManager() -> SetPrintProgress(1);
 	fCount = 0;
+	fCount_i = 0;
 }
 
 OpEventAction::~OpEventAction() 
@@ -36,6 +37,7 @@ void OpEventAction::BeginOfEventAction(const G4Event*)
 void OpEventAction::EndOfEventAction(const G4Event* evt)
 {
 	std::cout << "EventAction::GetCount "<< GetCount() << std::endl;
+	std::cout << "EventAction::GetCount_i "<< GetCount_i() << std::endl;
 //	// Get Hits from the detector if any
 //	G4HCofThisEvent* HCE = evt->GetHCofThisEvent();
 //	if(!HCE)
@@ -102,6 +104,9 @@ void OpEventAction::EndOfEventAction(const G4Event* evt)
 
 
 	frunAction -> fillcount(fCount);
+	frunAction -> fillcount_i(fCount_i);
+	fCount = 0;
+	fCount_i = 0;
 	frunAction -> update();
 	frunAction -> clear();
 

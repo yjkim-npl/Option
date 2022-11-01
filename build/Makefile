@@ -297,6 +297,30 @@ src/OpSteppingAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpSteppingAction.cc.s
 .PHONY : src/OpSteppingAction.cc.s
 
+src/OpTrackingAction.o: src/OpTrackingAction.cc.o
+.PHONY : src/OpTrackingAction.o
+
+# target to build an object file
+src/OpTrackingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.o
+.PHONY : src/OpTrackingAction.cc.o
+
+src/OpTrackingAction.i: src/OpTrackingAction.cc.i
+.PHONY : src/OpTrackingAction.i
+
+# target to preprocess a source file
+src/OpTrackingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.i
+.PHONY : src/OpTrackingAction.cc.i
+
+src/OpTrackingAction.s: src/OpTrackingAction.cc.s
+.PHONY : src/OpTrackingAction.s
+
+# target to generate assembly for a file
+src/OpTrackingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Option.dir/build.make CMakeFiles/Option.dir/src/OpTrackingAction.cc.s
+.PHONY : src/OpTrackingAction.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -327,6 +351,9 @@ help:
 	@echo "... src/OpSteppingAction.o"
 	@echo "... src/OpSteppingAction.i"
 	@echo "... src/OpSteppingAction.s"
+	@echo "... src/OpTrackingAction.o"
+	@echo "... src/OpTrackingAction.i"
+	@echo "... src/OpTrackingAction.s"
 .PHONY : help
 
 

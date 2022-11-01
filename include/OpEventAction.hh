@@ -29,6 +29,9 @@ class OpEventAction : public G4UserEventAction
   void photon_count() {fCount++;}
   G4int GetCount() {return fCount;}
 
+  void photon_count_i() {fCount_i++;}
+  G4int GetCount_i() {return fCount_i;}
+
   OpRunAction* frunAction;
   OpDetectorConstruction* fDetector;
  private:
@@ -38,6 +41,7 @@ class OpEventAction : public G4UserEventAction
   int evtNum;
 
   G4int fCount;		// MPPC count
+  G4int fCount_i;
 };
 
 #endif

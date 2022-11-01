@@ -41,7 +41,7 @@ OpPrimaryGeneratorAction::~OpPrimaryGeneratorAction()
 
 void OpPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  G4double x0 = 0.*mm;
+  G4double x0 = 100.*mm;
   G4double y0 = 0.*mm;
   G4double z0 = 0*mm;
   

@@ -53,6 +53,8 @@ void OpSteppingAction::UserSteppingAction(const G4Step* step)
 		fEventAction -> photon_count();
 	  // wavlen
 	  G4double energy = track -> GetTotalEnergy();
+	  fRunAction -> fillE(energy);
+
 	  G4double wav = ETowav(energy);
 	  fRunAction -> fillWavlen(wav);
 

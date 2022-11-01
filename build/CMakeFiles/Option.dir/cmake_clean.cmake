@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Option.dir/src/OpRunAction.cc.o.d"
   "CMakeFiles/Option.dir/src/OpSteppingAction.cc.o"
   "CMakeFiles/Option.dir/src/OpSteppingAction.cc.o.d"
+  "CMakeFiles/Option.dir/src/OpTrackingAction.cc.o"
+  "CMakeFiles/Option.dir/src/OpTrackingAction.cc.o.d"
   "Option"
   "Option.pdb"
 )
