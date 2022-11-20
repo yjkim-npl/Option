@@ -26,22 +26,26 @@ class OpEventAction : public G4UserEventAction
   void EndOfEventAction(const G4Event*) override;
 
   void fillLeaks(G4double, tuple<G4double,G4double,G4double>,tuple<G4double,G4double,G4double>);
-  void photon_count() {fCount++;}
-  G4int GetCount() {return fCount;}
+  void photon_count(G4int ID,G4int OPT);
+  G4int GetCount(G4int OPT);
 
-  void photon_count_i() {fCount_i++;}
-  G4int GetCount_i() {return fCount_i;}
 
   OpRunAction* frunAction;
   OpDetectorConstruction* fDetector;
  private:
+  bool Exist(vector<G4int>list, int id);
 //  void fillHits(OpPhotonDetHit* hit);
   void fillPtcs(G4PrimaryVertex* vtx, G4PrimaryParticle* ptc);
 
   int evtNum;
 
+  vector<G4int> trackID;
+  vector<G4int> trackID_scint;
+  vector<G4int> trackID_air;
+
   G4int fCount;		// MPPC count
-  G4int fCount_i;
+  G4int fCount_Scint;
+  G4int fCount_air;
 };
 
 #endif

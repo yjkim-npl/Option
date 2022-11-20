@@ -2,25 +2,20 @@
 #define OpActionInitialization_h 1
 
 #include "G4VUserActionInitialization.hh"
-//#include <iostream>
-//#include <fstream>
+#include "OpParameterContainer.hh"
 
 /// Action initialization class.
 
 class OpActionInitialization : public G4VUserActionInitialization
 {
   public:
-    OpActionInitialization();//char* parName);
+    OpActionInitialization(OpParameterContainer* parC);
     virtual ~OpActionInitialization();
 
     virtual void BuildForMaster() const;
     virtual void Build() const;
   private:
+	OpParameterContainer* parameterContainer;
 //	ifstream parameter;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-
-    

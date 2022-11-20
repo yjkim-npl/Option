@@ -6,15 +6,15 @@
 #include "G4OpticalSurface.hh"
 #include "globals.hh"
 
+class OpParameterContainer;
+
 class G4VPhysicalVolume;
 class G4LogicalVolume;
-
-/// Detector construction class to define materials and geometry.
 
 class OpDetectorConstruction : public G4VUserDetectorConstruction
 {
   public:
-    OpDetectorConstruction();
+    OpDetectorConstruction(OpParameterContainer* par);
     virtual ~OpDetectorConstruction();
 
     G4VPhysicalVolume* Construct() override;
@@ -22,6 +22,7 @@ class OpDetectorConstruction : public G4VUserDetectorConstruction
 	int NofY;
 
   private:
+	OpParameterContainer* OpPar;
 	void DefineMaterials();
 
 	G4double fWorldSizeX;
@@ -37,9 +38,12 @@ class OpDetectorConstruction : public G4VUserDetectorConstruction
 	G4double fSCZ;
 
 	G4double fMPPCX;
-	G4double fGlassX;
 	G4double fMPPCY;
 	G4double fMPPCZ;
+
+	G4double fGlassX;
+	G4double fGlassY;
+	G4double fGlassZ;
 
 	G4Material* fVac;
 	G4Material* fAir;
@@ -56,7 +60,5 @@ class OpDetectorConstruction : public G4VUserDetectorConstruction
 	std::vector<G4LogicalVolume*> vec_logicMPPCR;
 
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 #endif
 

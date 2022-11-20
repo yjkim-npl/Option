@@ -10,45 +10,55 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+#include <random>
 
-OpPrimaryGeneratorAction::OpPrimaryGeneratorAction()
+OpPrimaryGeneratorAction::OpPrimaryGeneratorAction(OpParameterContainer* parC)
 : G4VUserPrimaryGeneratorAction(),
   fParticleGun(0) 
 {
-  G4int n_particle = 1;
-  fParticleGun  = new G4ParticleGun(n_particle);
+	OpPar = parC;
+	G4int n_particle = OpPar->GetParInt("NperEvent");
+	fParticleGun  = new G4ParticleGun(n_particle);
 
-  // default particle kinematic
-  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-  G4String particleName;
-  G4ParticleDefinition* particle
-    = particleTable->FindParticle(particleName="mu-");
-  fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-  fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.*mm));
-  fParticleGun->SetParticleEnergy(10.*GeV);
+	// default particle kinematic
+	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+	G4String particleName;
+	G4ParticleDefinition* particle
+		= particleTable->FindParticle(particleName=OpPar->GetParString("particle"));
+//    = particleTable->FindParticle(particleName="mu-");
+	fParticleGun->SetParticleDefinition(particle);
+	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
+	fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.*mm));
+//	fParticleGun->SetParticleEnergy(10.*GeV);
+	fParticleGun->SetParticleEnergy(OpPar->GetParDouble("energy")*GeV);
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 OpPrimaryGeneratorAction::~OpPrimaryGeneratorAction()
 {
-  delete fParticleGun;
+	delete fParticleGun;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void OpPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  G4double x0 = 100.*mm;
-  G4double y0 = 0.*mm;
-  G4double z0 = 0*mm;
-  
-  fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
+	// random num
+	std::random_device RD;
+	std::mt19937_64 RDGen(RD());
+	G4double x0 = OpPar->GetParDouble("x0")*mm;
+	G4double y0 = OpPar->GetParDouble("y0")*mm;
+	G4double z0 = OpPar->GetParDouble("z0")*mm;
 
-  fParticleGun->GeneratePrimaryVertex(anEvent);
+	G4double rx = OpPar->GetParDouble("rx")*mm;
+	G4double ry = OpPar->GetParDouble("ry")*mm;
+
+	std::uniform_real_distribution<> RDdistX(-rx,rx);
+	std::uniform_real_distribution<> RDdistY(-ry,ry);
+	rx = RDdistX(RDGen);
+	ry = RDdistY(RDGen);
+
+	x0+=rx;
+	y0+=ry;
+
+	fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
+
+	fParticleGun->GeneratePrimaryVertex(anEvent);
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-

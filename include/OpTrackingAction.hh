@@ -14,8 +14,7 @@ class OpTrackingAction : public G4UserTrackingAction
 		OpTrackingAction(OpRunAction*,OpEventAction*);
 		virtual ~OpTrackingAction() {}
 
-		virtual void PreUserTrackingAction(const G4Track* track);
-//		G4int GetCount() {return count_i;}
+		virtual void PreUserTrackingAction(G4Track* track);
 	private:
 		OpEventAction* fEventAction;
 		OpRunAction* fRunAction;

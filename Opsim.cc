@@ -1,5 +1,6 @@
 #include "OpDetectorConstruction.hh"
 #include "OpActionInitialization.hh"
+#include "OpParameterContainer.hh"
 
 #include "G4RunManagerFactory.hh"
 #include "G4RunManager.hh"
@@ -17,18 +18,20 @@
 int main(int argc,char** argv)
 {
   G4UIExecutive* ui = 0;
-  if ( argc == 1 ) {
+  if ( argc <= 2 ) {
     ui = new G4UIExecutive(argc, argv);
   }
+  G4String parName = "OpParameter.conf";
+  if(argc >2) parName = argv[1];
   G4int seed = 0;
   G4String filename;
-  if(argc >2)  	seed = atoi(argv[2]);
-  if(argc >3) 	filename = argv[3];
-//  auto* runManager =
-//    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
+  if(argc >3)  	seed = atoi(argv[3]);
+  if(argc >4) 	filename = argv[4];
   G4RunManager* runManager = new G4RunManager;
 
-  runManager->SetUserInitialization(new OpDetectorConstruction());
+  OpParameterContainer* parC = new OpParameterContainer(parName);
+
+  runManager->SetUserInitialization(new OpDetectorConstruction(parC));
 
   // Physics list
   G4VModularPhysicsList* physicsList = new FTFP_BERT;
@@ -42,24 +45,20 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(physicsList);
     
   // User action initialization
-  runManager->SetUserInitialization(new OpActionInitialization());
+  runManager->SetUserInitialization(new OpActionInitialization(parC));
   
   // Initialize visualization
   //
   G4VisManager* visManager = new G4VisExecutive;
-  // G4VisExecutive can take a verbosity argument - see /vis/verbose guidance.
-  // G4VisManager* visManager = new G4VisExecutive("Quiet");
   visManager->Initialize();
 
   // Get the pointer to the User Interface manager
   G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
-  // Process macro or start UI session
-  //
   if ( argc != 1 ) { 
     // batch mode
     G4String command = "/control/execute ";
-    G4String fileName = argv[1];
+    G4String fileName = parC -> GetParString("geant_mac");;
     UImanager->ApplyCommand(command+fileName);
   }
   else { 
@@ -68,11 +67,6 @@ int main(int argc,char** argv)
     ui->SessionStart();
     delete ui;
   }
-
-  // Job termination
-  // Free the store: user actions, physics_list and detector_description are
-  // owned and deleted by the run manager, so they should not be deleted 
-  // in the main() program !
   
   delete visManager;
   delete runManager;

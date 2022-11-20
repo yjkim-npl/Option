@@ -48,8 +48,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(Option Option.cc ${sources} ${headers})
-target_link_libraries(Option ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+add_executable(Opsim Opsim.cc ${sources} ${headers})
+target_link_libraries(Opsim ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -57,8 +57,7 @@ target_link_libraries(Option ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 # relies on these scripts being in the current working directory.
 #
 set(OPTION_SCRIPTS
-#  Option.in
-#  Option.out
+  OpParameter.conf
   init_vis.mac
   run1.mac
   run2.mac

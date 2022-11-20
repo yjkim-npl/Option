@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../OpParameter.conf"
   "CMakeFiles/3.20.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.20.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.20.5/CMakeSystem.cmake"
@@ -149,6 +150,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "OpParameter.conf"
   "init_vis.mac"
   "run1.mac"
   "run2.mac"
@@ -158,5 +160,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Option.dir/DependInfo.cmake"
+  "CMakeFiles/Opsim.dir/DependInfo.cmake"
   )

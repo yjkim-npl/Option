@@ -5,44 +5,29 @@
 #include "OpEventAction.hh"
 #include "OpSteppingAction.hh"
 #include "OpTrackingAction.hh"
+#include "OpParameterContainer.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-OpActionInitialization::OpActionInitialization()
+OpActionInitialization::OpActionInitialization(OpParameterContainer* parC)
  : G4VUserActionInitialization()
-{}
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+{
+	parameterContainer = parC;
+}
 
 OpActionInitialization::~OpActionInitialization()
 {}
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void OpActionInitialization::BuildForMaster() const
 {
-  OpRunAction* runAction = new OpRunAction;
+  OpRunAction* runAction = new OpRunAction(parameterContainer);
   SetUserAction(runAction);
-//  SetUserAction(new OpPrimaryGeneratorAction);
-//
-//  OpDetectorConstruction* det = new OpDetectorConstruction();
-//  OpRunAction* runAction = new OpRunAction;
-//  SetUserAction(runAction);
-//  
-//  OpEventAction* eventAction = new OpEventAction(runAction,det);
-//  SetUserAction(eventAction);
-//  
-//  SetUserAction(new OpSteppingAction(eventAction));
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void OpActionInitialization::Build() const
 {
-  SetUserAction(new OpPrimaryGeneratorAction);
+  SetUserAction(new OpPrimaryGeneratorAction(parameterContainer));
 
-  OpDetectorConstruction* det = new OpDetectorConstruction();
-  OpRunAction* runAction = new OpRunAction;
+  OpDetectorConstruction* det = new OpDetectorConstruction(parameterContainer);
+  OpRunAction* runAction = new OpRunAction(parameterContainer);
   SetUserAction(runAction);
   
   OpEventAction* eventAction = new OpEventAction(runAction,det);
@@ -51,5 +36,3 @@ void OpActionInitialization::Build() const
   SetUserAction(new OpTrackingAction(runAction,eventAction));
   SetUserAction(new OpSteppingAction(eventAction,runAction));
 }  
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
